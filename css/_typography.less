@@ -1,0 +1,81 @@
+/*
+
+typography.less
+
+Including typographic elements and basic page styles.
+Applied to main styles and admin wysiwyg editor.
+
+*/
+
+@import "_light-bootstrap.less";
+@import "_mixin.less";
+
+//////////////// Typeface ////////////////
+
+.serif {
+  font-family: 'Trocchi', serif;
+}
+.kaiti {
+  font-family: 'Trocchi', STKaiti, Kai, serif; // For Chinese
+}
+
+
+
+//////////////// Typeface ////////////////
+
+body {
+  color: @ink;
+  .serif;
+  line-height: 1.5;
+  //font-family: 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif; // For Chinese
+}
+
+p {
+  line-height: 1.7;
+}
+
+h1 {font-size: 1.875em;} // 30/16
+h2 {font-size: 1.125em;} // 18/16
+h3 {font-size: 1em;}
+h4 {font-size: 1em;}
+h1, h2, h3, h4 {
+  margin-bottom: 0.6em;
+  color: @pink;
+}
+
+#tinymce {
+  p+h1, p+h2, p+h3, p+h4 {
+    margin-top: 2em;
+  }
+  h3, h4 {
+    color: @ink;
+  }
+}
+
+//////////////// Links ////////////////
+
+a {
+  color: @red;
+  text-decoration: none;
+}
+p a:hover {
+  text-decoration: underline;
+}
+.a-underline-none {
+  a:hover {text-decoration: none !important;}
+}
+
+
+//////////////// Lettering ////////////////
+
+#cover {
+
+  h2 {
+    font-size: 1.5em;
+
+    span { display: inline-block;}
+
+    .char1 { .transform(rotate(-20deg)); }
+
+  }
+}

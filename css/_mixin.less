@@ -1,0 +1,63 @@
+@img: "../images/";
+
+// Colours -----------------
+
+@ink: #534235; // body text
+@paper: #f4f1d4; // body bg
+
+// Accents
+@orange: #f5822b;
+@red: #bb2830;
+@yellow: #f0b040;
+
+@pink: #cd404e;
+
+// Greys, light to dark
+@grey1: #f9fafa;
+@grey2: #eceded; // standard grey
+@grey3: #dfe2e2;
+@grey4: #d0d5d5;
+
+
+// Rules
+.text-shadow-dark {text-shadow: 0 1px rgba(0,0,0,.75);}
+.text-shadow-light {text-shadow: 0 1px rgba(255,255,255,.5);}
+.floatL {float: left;}
+.floatR {float: right;}
+.clear {clear: both;}
+.hide {display: none;}
+.hide-text {
+  text-indent: -9999px;
+  //text-indent: 100%; white-space: nowrap; overflow: hidden;
+}
+
+
+a[target]:after {content: url("@{img}target.gif");}
+
+.no-target-icon {
+  &:after, a:after {
+    content: '';
+  }
+}
+
+.no-list-style {
+  &, ul, ol {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.make-button(@color:@orange) {
+  cursor: pointer;
+  background: @color;
+  color: #fff !important;
+  path {
+    fill: #fff;
+  }
+  &:hover {
+    background: darken(@color, 10%);
+  }
+  &:active {
+    background: darken(@color, 20%);
+  }
+}

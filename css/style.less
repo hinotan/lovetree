@@ -1,0 +1,357 @@
+@import "_normalize.less";
+@import "_light-bootstrap.less";
+@import "_mixin.less";
+@import "_typography.less";
+
+@import "../vendor/css/onMediaQuery.css";
+
+
+
+//////////////// Basic ////////////////
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: @paper; // url('../images/bg-texture.png');
+}
+
+.wrap {
+  .clear;
+  .clearfix;
+  .center-block;
+}
+
+a {
+  .transition(color .3s ease);
+}
+
+#overlay {
+  .click-through-div('../images/bg-texture.png');
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  //background: url('../images/bg-texture.png');
+}
+
+
+#the-menu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  padding: 50px;
+}
+
+.ellen-and-shin {
+  .hide-text;
+  .size(516px, 148px);
+  max-width: 100%;
+  background: url('../images/ellen-and-shin.png') no-repeat left bottom;
+  background-size: contain;
+}
+
+
+//////////////// SVG ////////////////
+
+#the-tree {
+  .opacity(90);
+  width: 70%;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  svg {
+    max-width: 100%;
+    max-height: 100%;
+    .floatR;
+  }
+
+  
+
+  &.show-lines {
+    #birdie, #tree {
+      .opacity(0);
+    }
+    #lines {
+      .opacity(100);
+    }
+  }
+
+  &.show-color {
+    #birdie, #tree {
+      .opacity(100);
+    }
+    #lines {
+      .opacity(0);
+    }
+  }
+
+}
+
+#birdie, #tree, #lines {
+  .transition(2s);
+}
+
+#leaves-highlight {
+  cursor: pointer;
+
+  path {
+    .transition(2s);
+    .transform-origin(50% 50%);
+    .transform(rotate(0deg));
+
+    &:hover {
+      fill: @pink;
+      .transition(.3s);
+      .transform(rotate(10deg));
+    }
+  }
+}
+
+#heart {
+  .transition(0.2s);
+  .transform-origin(50% 50%);
+  cursor: pointer;
+}
+
+#bird-ellen, #bird-shin {
+  .transform(rotate(0deg));
+  .transform-origin(50% 100%);
+  cursor: pointer;
+  .transition(0.2s);
+}
+
+#birdie {
+  &:hover {
+    #heart {
+      .transform(translateY(-5px));
+    }
+    #bird-ellen {
+      .transform(rotate(-3deg));
+    }
+    #bird-shin {
+      .transform(rotate(3deg));
+    }
+    
+  }
+  &:active {
+    #heart {
+      .transform(scale(3,3));
+    }
+    #bird-ellen {
+      .transform(rotate(2deg));
+    }
+    #bird-shin {
+      .transform(rotate(-2deg));
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+.card {
+  background: @paper;
+  .box-shadow(0 2px 5px rgba(0,0,0,0.4));
+  position: relative;
+  border: 10px solid @paper;
+
+  &:after {
+    content: '';
+    display: block;
+    background: url(../images/card-tip.png) no-repeat;
+    .size(21px, 16px);
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    margin: 10px 0 0 -10px;
+  }
+
+  &.ins {
+    width: 220px;
+
+    .img-wrapper {
+      .square(200px);
+      position: relative;
+      img {
+        max-width: 100%;
+      }
+      .shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        .box-shadow(inset 0 0 20px rgba(0,0,0,0.2));
+      }
+      
+    }
+
+    figcaption {
+      color: @pink;
+      margin: 10px 0;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+/* ------------------------
+   MEDIA QUERIES
+------------------------ */
+
+// S: Landscape phone to desktop/tablet
+/*
+   #########
+  # |     | #              ##########
+  # | . . | #           ######     ####
+  # |     | #            #######
+  # |  v  | #                  #######
+  # |_____| #           ####     ######
+  #   ( )   #            ###########
+   #########
+*/
+
+@media (max-width: 767px) {
+  .desktop {display: none}
+  .wrap {width: 90%;}
+
+}
+
+
+// --------------------------------------------------
+
+// M: Tablet to desktop
+/*
+   ###################
+  #  --------------   #           ###         ###
+  # |              |  #           ######    #####
+  # |   -     \    |-.#           ####### #######
+  # |   -     /    |-`#           ###  #####  ###
+  # |              |  #           ###   ###   ###
+  #  --------------   #           ###         ###
+   ###################
+*/
+
+@media (min-width: 768px) and (max-width: 979px) {
+  @col: 44px;
+  @gap: 20px;
+  body {
+    font-size: 87.5%;
+  }
+  .wrap {
+    width: (@col + @gap) * 12 - @gap; //748px
+  }
+  .g-2col { width: (@col + @gap) * 2 - @gap }
+  .g-3col { width: (@col + @gap) * 3 - @gap }
+  .g-4col { width: (@col + @gap) * 4 - @gap }
+  .g-5col { width: (@col + @gap) * 5 - @gap }
+  .g-6col { width: (@col + @gap) * 6 - @gap }
+  .g-7col { width: (@col + @gap) * 7 - @gap }
+  .g-8col { width: (@col + @gap) * 8 - @gap }
+  .g-9col { width: (@col + @gap) * 9 - @gap }
+  .g-10col { width: (@col + @gap) * 10 - @gap }
+
+
+}
+
+
+// --------------------------------------------------
+
+// L: Large desktop and up
+/*
+   ######################
+  ##                    ##
+  ##     O   |   O      ##           ####
+  ##        _|          ##           ####
+  ##      -_____-       ##           ####
+  ##                    ##           ####
+  ##---------==---------##           ####
+   ######################            ##############
+           /::::\                    ##############
+         ==========
+*/
+
+@media (min-width: 980px) {
+  @col: 60px;
+  @gap: 20px;
+  .wrap {
+    width: (@col + @gap) * 12 - @gap; //940px
+  }
+  .g-2col { width: (@col + @gap) * 2 - @gap }
+  .g-3col { width: (@col + @gap) * 3 - @gap }
+  .g-4col { width: (@col + @gap) * 4 - @gap }
+  .g-5col { width: (@col + @gap) * 5 - @gap }
+  .g-6col { width: (@col + @gap) * 6 - @gap }
+  .g-7col { width: (@col + @gap) * 7 - @gap }
+  .g-8col { width: (@col + @gap) * 8 - @gap }
+  .g-9col { width: (@col + @gap) * 9 - @gap }
+  .g-10col { width: (@col + @gap) * 10 - @gap }
+
+}
+
+
+// --------------------------------------------------
+
+// M+L: Tablet + desktop
+/*
+  ###         ###          ####
+  ######    #####          ####
+  ####### #######    ##    ####
+  ###  #####  ###  ######  ####
+  ###   ###   ###    ##    ##############
+  ###         ###          ##############
+*/
+
+@media (min-width: 768px) {
+  .mobile {display: none}
+  .g-2col,.g-3col,.g-4col,.g-5col,.g-6col,.g-7col,.g-8col,.g-9col, .g-10col {
+    margin-right: 20px;
+    .floatL;
+
+    &.omega { // last one in a row
+      margin-right: 0;
+    }
+  }
+
+}
+
+
+
+// General @2x
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+
+}
+
+
+
+/*
+  ####################################################
+  --------------------------------------------------
+  ################################################
+  ##############################################
+  ################################################
+  --------------------------------------------------
+  ####################################################
+*/
+
+/* ------------------------
+   PLUGINS
+------------------------ */
+
+//@import "../vendor/css/flexslider.css";
+
