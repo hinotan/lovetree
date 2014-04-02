@@ -75,7 +75,8 @@
       progress = this.current_frame/this.total_frames;
     if (progress > 1) {
       window.cancelAnimFrame(this.handle);
-      this.showImage();
+      //this.showImage();
+      $('#the-tree').removeClass('show-lines').addClass('show-color');
     } else {
       this.current_frame++;
       for(var j=0, len = this.path.length; j<len;j++){
@@ -186,9 +187,9 @@
 
   if($('#the-tree').hasClass('show-lines')) {
     init();
-    setTimeout(function() {
-      $('#the-tree').removeClass('show-lines').addClass('show-color');
-    }, 6000);
+    //setTimeout(function() {
+    //  $('#the-tree').removeClass('show-lines').addClass('show-color');
+    //}, 6000);
   } else {
     console.log('show-color');
   }
