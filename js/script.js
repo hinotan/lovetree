@@ -46,7 +46,7 @@
     this.el = el;
     this.image = this.el.previousElementSibling;
     this.current_frame = 0;
-    this.total_frames = 60;
+    this.total_frames = 50;
     this.path = new Array();
     this.length = new Array();
     this.handle = 0;
@@ -75,8 +75,9 @@
       progress = this.current_frame/this.total_frames;
     if (progress > 1) {
       window.cancelAnimFrame(this.handle);
-      //this.showImage();
+
       $('#the-tree').removeClass('show-lines').addClass('show-color');
+
     } else {
       this.current_frame++;
       for(var j=0, len = this.path.length; j<len;j++){
