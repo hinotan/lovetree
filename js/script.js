@@ -194,6 +194,61 @@
     console.log('show-color');
   }
 
-  
+  // create a popup when click leaves-highlight
+  $("#leaves-highlight").on("click", 
+      function(ev)
+      {
+        // get mouse x and y(client based coordinate)
+        var mouseX = ev.clientX;
+        var mouseY = ev.clientY;
+
+        var buttonIndex = 1; //well, we can get which leaf is clicked in ev, now we just assume leave 1 has been clicked
+
+        // measure popup's size
+        var popupHeight = $("#card-ins-" + buttonIndex).height();
+        var popupWidth = $("#card-ins-" + buttonIndex).width();
+        // decide the div's vertical position
+        if (mouseY - popupHeight - 10 > 0) // enough space upward
+        {
+          $("#card-ins-" + buttonIndex)[0].style.top = String(mouseY - popupHeight - 30) + "px";
+ 
+        }
+        else if(mouseY + popupHeight < window.innerHeight) // enough space downward
+        {
+          $("#card-ins-" + buttonIndex)[0].style.top = String(mouseY) + "px";
+        }
+        else // ok the space is insufficient so let div lay on the client's bottom
+        {
+          $("#card-ins-" + buttonIndex)[0].style.top = String(window.innerHeight - mouseY) + "px";
+        }
+
+        // decide div's horizontal position
+        var horizontalPosition = mouseX - popupWidth/2;
+        if(horizontalPosition + popupWidth > window.innerWidth)
+        {
+          horizontalPosition = window.innerWidth - popupWidth;
+        }
+        if (horizontalPosition < 0)
+        {
+          horizontalPosition = 0;
+        }
+        $("#card-ins-" + buttonIndex)[0].style.left = String(horizontalPosition) + "px";
+
+        // bring it up!
+        $("#card-ins-" + buttonIndex)[0].style.position = "absolute";
+        $("#card-ins-" + buttonIndex)[0].style.visibility = "visible";
+        
+        ev.stopPropagation(); //we don't want event passed to it's parent node
+      }
+    );
+
+  window.onclick = function() 
+  {
+    // so if click on document we want all popup disappear
+    var x = $(".card");
+    $(".card").each(
+      function(){this.style.visibility = "hidden";}
+      );
+  }
 
 })();
