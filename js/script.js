@@ -198,6 +198,16 @@
   $("#leaves-highlight").on("click", 
       function(ev)
       {
+        // make sure if there is a popup opened, then hide it first
+        $(".card").each(
+          function()
+          {
+            if (this != undefined && this.style.display == "block")
+            {
+              this.style.display = "none";
+            }
+          }
+        );
         // get mouse x and y(client based coordinate)
         var mouseX = ev.clientX;
         var mouseY = ev.clientY;
@@ -236,7 +246,8 @@
 
         // bring it up!
         $("#card-ins-" + buttonIndex)[0].style.position = "absolute";
-        $("#card-ins-" + buttonIndex)[0].style.visibility = "visible";
+        //$("#card-ins-" + buttonIndex)[0].style.visibility = "visible";
+        $("#card-ins-" + buttonIndex).fadeIn();
         
         ev.stopPropagation(); //we don't want event passed to it's parent node
       }
@@ -245,10 +256,7 @@
   window.onclick = function() 
   {
     // so if click on document we want all popup disappear
-    var x = $(".card");
-    $(".card").each(
-      function(){this.style.visibility = "hidden";}
-      );
+    $(".card").fadeOut();
   }
 
 })();
