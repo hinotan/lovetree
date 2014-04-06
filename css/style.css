@@ -765,7 +765,7 @@ a {
   height: 148px;
   width: 516px;
   max-width: 100%;
-  background: url('../images/ellen-and-shin.png') no-repeat left bottom;
+  background: url('../images/ellen-and-shin2.png') no-repeat left bottom;
   background-size: contain;
 }
 #the-tree {
@@ -781,7 +781,9 @@ a {
 #the-tree svg {
   max-width: 100%;
   max-height: 100%;
-  float: right;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 #the-tree.show-lines #birdie,
 #the-tree.show-lines #tree {

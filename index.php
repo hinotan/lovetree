@@ -62,7 +62,6 @@
   </div>
 
 </div>
-<div id="overlay"></div>
 
 <div id="card-ins-1" class="card ins">
   <figure>
