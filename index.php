@@ -120,9 +120,13 @@
 
 <script src="js/script.js"></script>
 <script>
+  $('nav .home a').click(function(){
+    $('.active-screen').fadeOut(1000);
+    $('body').removeClass();
+  });
   $('nav .history a').click(function(){
     // Show story-of-two slides
-    $('#story-of-two').fadeIn(1000);
+    $('#story-of-two').fadeIn(1000).addClass('active-screen');
     $('body').addClass('show-story');
   });
 </script>
