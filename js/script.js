@@ -196,6 +196,8 @@
   $("#leaves-highlight path").click(
       function(ev){
 
+
+
         // get mouse x and y(client based coordinate)
         var mouseX = ev.clientX;
         var mouseY = ev.clientY;
@@ -203,6 +205,7 @@
         //var buttonIndex = 1; //well, we can get which leaf is clicked in ev, now we just assume leave 1 has been clicked
         // get target element ID through data-target value
         var target = $(this).data('target');
+        console.log('Click leaf: '+target);
         var $target = $("#"+target);
 
         // first of all hide other popups
@@ -254,6 +257,7 @@
     $(".popup").fadeOut();
   }
 
+
   var funcPrev = function()
   {
     $(this).removeClass('prev').addClass('current');
@@ -279,19 +283,19 @@
 
     if ($(this).next()) {
       $(this).next().removeClass('hidden').addClass('next');
-	    $(this).next().click(func);
+      $(this).next().click(func);
     }
     if ($(this).prev()) {
       $(this).prev().removeClass('current').addClass('prev');
-	    $(this).prev().click(funcPrev);
+      $(this).prev().click(funcPrev);
     }
     if ($(this).prev().prev()) {    
       $(this).prev().prev().removeClass('prev').addClass('hidden');
-	  // delete event handler
-	  $(this).prev().prev().click(undefined);
+    // delete event handler
+    $(this).prev().prev().click(undefined);
     }
   };
   // 
-  $('.story-of-two .next').click(func);
+  $('#story-of-two .next').click(func);
 
 })();

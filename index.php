@@ -18,7 +18,6 @@
 <!-- ::: CSS :::::::::: -->
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <link rel="stylesheet" href="css/style.css" type="text/css" />
-  <link rel="stylesheet" href="css/print.css" type="text/css" media="print"/>
   <!--[if lt IE 9]><link rel="stylesheet" href="css/iefix.css" type="text/css" /><![endif]-->
 
 <!-- ::: Favicons :::::::::: -->
@@ -33,15 +32,6 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="vendor/js/jquery-1.8.1.min.js"><\/script>')</script>
   <script src="vendor/js/plugins.js"></script>
-  <script type="text/javascript" charset="utf-8">
-  /*
-    $(window).load(function() {
-      $('.flexslider').flexslider({
-        animation: "slide",
-        animationLoop: false
-      }).pause();
-    });*/
-  </script>
 
 <!-- ::: Analytics :::::::::: -->
 

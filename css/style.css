@@ -1012,10 +1012,6 @@ nav .rsvp a i {
   -o-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-.popup {
-  z-index: 999;
-  display: none;
-}
 .card {
   background: #f4f1d4;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
@@ -1074,6 +1070,11 @@ nav .rsvp a i {
   color: #e7636d;
   margin: 10px 0;
   text-align: center;
+}
+.popup {
+  z-index: 999;
+  position: absolute;
+  display: none;
 }
 #story-of-two {
   display: none;
