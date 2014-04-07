@@ -254,17 +254,36 @@
     $(".popup").fadeOut();
   }
 
+  var funcPrev = function()
+  {
+    $(this).removeClass('prev').addClass('current');
+
+    if ($(this).prev()) {
+      $(this).prev().removeClass('hidden').addClass('prev');
+      $(this).prev().click(funcPrev);
+    }
+    if ($(this).next()) {
+      $(this).next().removeClass('current').addClass('next');
+      // add next click event handler here
+      $(this).next().click(func);
+    }
+    if ($(this).next().next()) {    
+      $(this).next().next().removeClass('next').addClass('hidden');
+      // delete event handler
+      $(this).next().next().click(undefined);
+    }
+  }
+
   var func = function(){
-    console.log('click next');
     $(this).removeClass('next').addClass('current');
 
     if ($(this).next()) {
       $(this).next().removeClass('hidden').addClass('next');
-	  $(this).next().click(func);
+	    $(this).next().click(func);
     }
     if ($(this).prev()) {
       $(this).prev().removeClass('current').addClass('prev');
-	  // TODO: add prev click event handler here
+	    $(this).prev().click(funcPrev);
     }
     if ($(this).prev().prev()) {    
       $(this).prev().prev().removeClass('prev').addClass('hidden');
@@ -273,9 +292,6 @@
     }
   };
   // 
-  $('.story-of-two .next').click(
-    func
-  );
-
+  $('.story-of-two .next').click(func);
 
 })();
