@@ -1,4 +1,3 @@
-@import "../vendor/css/onMediaQuery.css";
 /*! normalize.css v1.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -657,10 +656,6 @@ a[target]:after {
 body {
   color: #534235;
   font-family: 'Trocchi', serif;
-  line-height: 1.5;
-}
-p {
-  line-height: 1.7;
 }
 h1 {
   font-size: 1.875em;
@@ -669,7 +664,7 @@ h2 {
   font-size: 1.125em;
 }
 h3 {
-  font-size: 1em;
+  font-size: 1.125em;
 }
 h4 {
   font-size: 1em;
@@ -679,7 +674,8 @@ h2,
 h3,
 h4 {
   margin-bottom: 0.6em;
-  color: #cd404e;
+  font-weight: normal;
+  color: #e7636d;
 }
 #tinymce p + h1,
 #tinymce p + h2,
@@ -720,6 +716,8 @@ body {
 }
 body {
   background: #f4f1d4;
+  font-size: 13px;
+  line-height: 20px;
 }
 .wrap {
   clear: both;
@@ -765,21 +763,109 @@ a {
   height: 148px;
   width: 516px;
   max-width: 100%;
-  background: url('../images/ellen-and-shin2.png') no-repeat left bottom;
+  pointer-events: none;
+  background: url('../images/ellen-and-shin2.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
   background-size: contain;
 }
+nav {
+  width: 50px;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+}
+nav ul {
+  height: 100%;
+}
+nav li {
+  width: 50px;
+  height: 33.3%;
+  cursor: pointer;
+}
+nav a {
+  display: block;
+  width: 50px;
+  height: 100%;
+  margin-left: -45px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: url(../images/dot-bg.png);
+  color: inherit;
+}
+nav li:hover a {
+  -moz-border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0;
+  margin-left: 0;
+}
+nav span {
+  margin-left: 5px;
+  font-size: 1.125em;
+  display: block;
+  width: 200px;
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+nav i {
+  display: block;
+}
+nav .home a {
+  background-color: #b1c77a;
+  color: #534235;
+  padding: 5px 0 0 5px;
+}
+nav .home a i {
+  height: 43px;
+  width: 33px;
+  background: url(../images/i-leaf.png) no-repeat;
+}
+nav .history a {
+  background-color: #e7636d;
+  color: #f4f1d4;
+  padding: 5px 0 0 5px;
+}
+nav .history a i {
+  height: 35px;
+  width: 34px;
+  background: url(../images/i-heart.png) no-repeat;
+  margin: 5px 0 0 0;
+}
+nav .rsvp a {
+  background-color: #8da571;
+  color: #f4f1d4;
+  padding: 5px 0 0 5px;
+}
+nav .rsvp a i {
+  height: 70px;
+  width: 48px;
+  background: url(../images/i-watch.png) no-repeat top right;
+  margin-left: -15px;
+}
 #the-tree {
+  z-index: 9;
   -khtml-opacity: 0.9;
   -moz-opacity: 0.9;
   opacity: 0.9;
-  width: 70%;
+  width: 90%;
   height: 100%;
   position: fixed;
   right: 0;
   top: 0;
 }
 #the-tree svg {
-  max-width: 100%;
   max-height: 100%;
   position: absolute;
   right: 0;
@@ -833,7 +919,7 @@ a {
   transform: rotate(0deg);
 }
 #leaves-highlight path:hover {
-  fill: #cd404e;
+  fill: #e7636d;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   transition: 0.3s;
@@ -913,24 +999,42 @@ a {
   -o-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
+.popup {
+  z-index: 999;
+  display: none;
+}
 .card {
   background: #f4f1d4;
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   position: relative;
   border: 10px solid #f4f1d4;
+  text-shadow: 0 1px #f4f1d4;
 }
-.card:after {
+.card.bottom-arrow:after {
   content: '';
   display: block;
-  background: url(../images/card-tip.png) no-repeat;
+  background: url(../images/card-tip-down.png) no-repeat;
   height: 16px;
   width: 21px;
   position: absolute;
   left: 50%;
   top: 100%;
   margin: 10px 0 0 -10px;
+}
+.card.top-arrow:after {
+  content: '';
+  display: block;
+  background: url(../images/card-tip-up.png) no-repeat;
+  height: 12px;
+  width: 21px;
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  margin: -12px 0 0 -10px;
 }
 .card.ins {
   width: 220px;
@@ -954,9 +1058,99 @@ a {
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 }
 .card.ins figcaption {
-  color: #cd404e;
+  color: #e7636d;
   margin: 10px 0;
   text-align: center;
+}
+.story-of-two {
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.story-of-two,
+.story-of-two ul,
+.story-of-two ol {
+  list-style: none;
+  padding: 0;
+}
+.story-of-two,
+.story-of-two ul,
+.story-of-two ol {
+  list-style: none;
+  padding: 0;
+}
+.story-of-two .card {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+.story-of-two .hidden {
+  display: none;
+}
+.story-of-two .current {
+  z-index: 1010;
+}
+.story-of-two .next {
+  left: 90%;
+}
+.story-of-two .prev {
+  left: -110%;
+}
+.story-of-two .next,
+.story-of-two .prev {
+  cursor: pointer;
+  z-index: 1000;
+  -webkit-filter: blur(3px) brightness(60%);
+  /*
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,0.4);
+    }*/
+
+}
+.story-of-two .first-met {
+  width: 374px;
+  height: 350px;
+  padding: 140px 20px 0;
+  background: #f4f1d4 url(../images/china.png) no-repeat;
+}
+.story-of-two .move-apart {
+  width: 308px;
+  height: 440px;
+  padding: 20px 0 0 20px;
+  background: #f4f1d4 url(../images/jp-nz.png) no-repeat;
+}
+.story-of-two .move-apart h3 {
+  margin-bottom: 100px;
+}
+.story-of-two .move-apart p {
+  margin-right: 20px;
+}
+.story-of-two .move-apart p:nth-child(2) {
+  margin-right: 70px;
+}
+.story-of-two .dating {
+  width: 320px;
+  height: 230px;
+  padding: 0 20px 0px;
+  background: #f4f1d4 url(../images/dating.png) no-repeat top right;
+}
+.story-of-two .dating h3 {
+  width: 120px;
 }
 /* ------------------------
    MEDIA QUERIES
@@ -990,9 +1184,6 @@ a {
    ###################
 */
 @media (min-width: 768px) and (max-width: 979px) {
-  body {
-    font-size: 87.5%;
-  }
   .wrap {
     width: 748px;
   }
@@ -1119,3 +1310,15 @@ a {
 /* ------------------------
    PLUGINS
 ------------------------ */
+.flexslider,
+.flexslider ul,
+.flexslider ol {
+  list-style: none;
+  padding: 0;
+}
+.flexslider,
+.flexslider ul,
+.flexslider ol {
+  list-style: none;
+  padding: 0;
+}

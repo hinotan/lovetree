@@ -3,7 +3,6 @@
 @import "_mixin.less";
 @import "_typography.less";
 
-@import "../vendor/css/onMediaQuery.css";
 
 
 
@@ -15,6 +14,8 @@ html, body {
 
 body {
   background: @paper; // url('../images/bg-texture.png');
+  font-size: 13px;
+  line-height: 20px;
 }
 
 .wrap {
@@ -48,23 +49,103 @@ a {
   .hide-text;
   .size(516px, 148px);
   max-width: 100%;
-  background: url('../images/ellen-and-shin2.png') no-repeat left bottom;
+  //background: url('../images/ellen-and-shin2.png') no-repeat left bottom;
+  
+  .click-through-div('../images/ellen-and-shin2.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
   background-size: contain;
+}
+
+nav {
+  width: 50px;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+
+  ul {
+    height: 100%;
+  }
+  li {
+    width: 50px;
+    height: 33.3%;
+    cursor: pointer;
+  }
+  a {
+    display: block;
+    width: 50px;
+    height: 100%;
+    margin-left: -45px;
+    .transition;
+    .border-radius(0);
+    background: url(../images/dot-bg.png);
+    color: inherit;
+  }
+  li:hover a {
+    .border-radius(0 5px 5px 0);
+    margin-left: 0;
+    //width: 50px;
+  }
+
+  span {
+    margin-left: 5px;
+    font-size: 1.125em;
+    display: block;
+    width: 200px;
+    .transform-origin(0 100%);
+    .transform(rotate(90deg));
+  }
+  i {
+    display: block;
+  }
+
+  .home a {
+    background-color: @green;
+    color: @ink;
+    padding: 5px 0 0 5px;
+    i {
+      .size(33px, 43px);
+      background: url(../images/i-leaf.png) no-repeat;
+    }
+  }
+  .history a {
+    background-color: @pink;
+    color: @paper;
+    padding: 5px 0 0 5px;
+    i {
+      .size(34px, 35px);
+      background: url(../images/i-heart.png) no-repeat;
+      margin: 5px 0 0 0;
+    }
+  }
+  .rsvp a {
+    background-color: @darkGreen;
+    color: @paper;
+    padding: 5px 0 0 5px;
+    i {
+      .size(48px, 70px);
+      background: url(../images/i-watch.png) no-repeat top right;
+      margin-left: -15px;
+    }
+  }
 }
 
 
 //////////////// SVG ////////////////
 
 #the-tree {
+  z-index: 9;
   .opacity(90);
-  width: 70%;
+  width: 90%;
   height: 100%;
   position: fixed;
   right: 0;
   top: 0;
 
   svg {
-    max-width: 100%;
+    //max-width: 100%;
     max-height: 100%;
     position: absolute;
     right: 0;
@@ -158,23 +239,39 @@ a {
 
 
 
+//////////////// CARD ////////////////
 
-
+.popup {
+  z-index: 999;
+  display: none;
+}
 .card {
   background: @paper;
   .box-shadow(0 2px 5px rgba(0,0,0,0.4));
+  .border-radius();
   position: relative;
   border: 10px solid @paper;
+  text-shadow: 0 1px @paper;
 
-  &:after {
+  &.bottom-arrow:after {
     content: '';
     display: block;
-    background: url(../images/card-tip.png) no-repeat;
+    background: url(../images/card-tip-down.png) no-repeat;
     .size(21px, 16px);
     position: absolute;
     left: 50%;
     top: 100%;
     margin: 10px 0 0 -10px;
+  }
+  &.top-arrow:after {
+    content: '';
+    display: block;
+    background: url(../images/card-tip-up.png) no-repeat;
+    .size(21px, 12px);
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    margin: -12px 0 0 -10px;
   }
 
   &.ins {
@@ -203,8 +300,89 @@ a {
       text-align: center;
     }
   }
+
 }
 
+.story-of-two {
+  .no-list-style;
+  z-index: 10;
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  .size(100%, 100%);
+
+  .card {
+    position: absolute;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    .transition();
+  }
+  .hidden {
+    display: none;
+  }
+  .current {
+    z-index: 1010;
+  }
+  .next {
+    left: 90%;
+  }
+  .prev {
+    left: -110%;
+  }
+  .next, .prev {
+    cursor: pointer;
+    z-index: 1000;
+    -webkit-filter: blur(3px) brightness(60%);
+
+    /*
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,0.4);
+    }*/
+  }
+
+  .first-met {
+    width: 374px;
+    height: 350px;
+    padding: 140px 20px 0;
+    background: @paper url(../images/china.png) no-repeat;
+    p {
+    }
+  }
+
+  .move-apart {
+    width: 308px;
+    height: 440px;
+    padding: 20px 0 0 20px;
+    background: @paper url(../images/jp-nz.png) no-repeat;
+
+    h3 {
+      margin-bottom: 100px;
+    }
+    p {
+      margin-right: 20px;
+    }
+    p:nth-child(2) {
+      margin-right: 70px;
+    }
+  }
+
+  .dating {
+    width: 320px;
+    height: 230px;
+    padding: 0 20px 0px;
+    background: @paper url(../images/dating.png) no-repeat top right;
+
+    h3 {
+      width: 120px;
+    }
+  }
+}
 
 
 
@@ -253,7 +431,7 @@ a {
   @col: 44px;
   @gap: 20px;
   body {
-    font-size: 87.5%;
+    //font-size: 87.5%;
   }
   .wrap {
     width: (@col + @gap) * 12 - @gap; //748px
@@ -355,5 +533,8 @@ a {
    PLUGINS
 ------------------------ */
 
+.flexslider {
+  .no-list-style;
+}
 //@import "../vendor/css/flexslider.css";
 

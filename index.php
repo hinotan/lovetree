@@ -31,6 +31,15 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="vendor/js/jquery-1.8.1.min.js"><\/script>')</script>
   <script src="vendor/js/plugins.js"></script>
+  <script type="text/javascript" charset="utf-8">
+  /*
+    $(window).load(function() {
+      $('.flexslider').flexslider({
+        animation: "slide",
+        animationLoop: false
+      }).pause();
+    });*/
+  </script>
 
 <!-- ::: Analytics :::::::::: -->
 
@@ -63,19 +72,49 @@
 
 </div>
 
-<div id="card-ins-1" class="card ins">
-  <figure>
-    <div class="img-wrapper">
-      <img src="dummy/ins1.jpg">
-      <div class="shadow"></div>
-    </div>
-    <figcaption>Guess who?</figcaption>
-  </figure>
+<?php include_once('_popup.php') ?>
+
+<div class="story-of-two">
+  <ul class="slides">
+    <li class="card text first-met current">
+      <h3>First met, 2006, Shanghai</h3>
+      <p>It all started on the internet. Ellen and Shin knew each other in a chatroom of a game forum, and soon met offline. The chatroom group turned out to be way more close-knit than others. People hung out all the time and became friends for life.</p>
+    </li>
+
+    <li class="card text move-apart next">
+        <h3>The world’s largest metropolis v.s<br/>the world’s coolest little capital</h3>
+        <p>Then in 2007, Shin moved to Japan, while Ellen moved to New Zealand in 2009. Life continued and they kept friendship alive over the internet.</p>
+        <p>Shin is a programmer and Ellen is a designer. But one day Ellen decided to learn how to code and become a web developer. And she was just lucky enough to find her best tutor.</p>
+    </li>
+
+    <li class="card text dating hidden">
+        <h3>Officially boyfriend and girlfriend, <br/>2012</h3>
+        <p>Long distance sounded like a curse but once again the internet came to rescue. (What else can we celebrate more in this era!)</p>
+    </li>
+
+
+  </ul>
 </div>
 
+<nav class="">
+
+  <ul>
+    <li class="home">
+      <a href=""><i></i><span>Back to the tree</span></a>
+    </li>
+    <li class="history">
+      <a href=""><i></i><span>Story of the two</span></a>
+    </li>
+    <li class="rsvp">
+      <a href=""><i></i><span>RSVP</span></a>
+    </li>
+  </ul>
+</nav>
 
 <script src="js/script.js"></script>
-
+<script>
+  //$('')
+</script>
 
 </body>
 </html>

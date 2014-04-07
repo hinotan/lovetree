@@ -188,56 +188,62 @@
 
   if($('#the-tree').hasClass('show-lines')) {
     init();
-    //setTimeout(function() {
-    //  $('#the-tree').removeClass('show-lines').addClass('show-color');
-    //}, 6000);
   } else {
     console.log('show-color');
   }
 
   // create a popup when click leaves-highlight
-  $("#leaves-highlight").on("click", 
-      function(ev)
-      {
+  $("#leaves-highlight path").click(
+      function(ev){
+
         // get mouse x and y(client based coordinate)
         var mouseX = ev.clientX;
         var mouseY = ev.clientY;
+        
+        //var buttonIndex = 1; //well, we can get which leaf is clicked in ev, now we just assume leave 1 has been clicked
+        // get target element ID through data-target value
+        var target = $(this).data('target');
+        var $target = $("#"+target);
 
-        var buttonIndex = 1; //well, we can get which leaf is clicked in ev, now we just assume leave 1 has been clicked
+        // first of all hide other popups
+        $(".popup").not("#"+target).fadeOut();
 
-        // measure popup's size
-        var popupHeight = $("#card-ins-" + buttonIndex).height();
-        var popupWidth = $("#card-ins-" + buttonIndex).width();
-        // decide the div's vertical position
-        if (mouseY - popupHeight - 10 > 0) // enough space upward
+        // then test if target already shows
+        if (! $target.hasClass("active") )
         {
-          $("#card-ins-" + buttonIndex)[0].style.top = String(mouseY - popupHeight - 30) + "px";
- 
-        }
-        else if(mouseY + popupHeight < window.innerHeight) // enough space downward
-        {
-          $("#card-ins-" + buttonIndex)[0].style.top = String(mouseY) + "px";
-        }
-        else // ok the space is insufficient so let div lay on the client's bottom
-        {
-          $("#card-ins-" + buttonIndex)[0].style.top = String(window.innerHeight - mouseY) + "px";
-        }
+          // measure popup's size
+          var popupHeight = $target.height();
+          var popupWidth = $target.width();
+          // decide the div's vertical position
+          if (mouseY - popupHeight - 10 > 0) // enough space upward
+          {
+            $target.css("top", (mouseY - popupHeight - 30) + "px" ).addClass("active bottom-arrow");
+          }
+          else if(mouseY + popupHeight < window.innerHeight) // enough space downward
+          {
+            $target.css("top", mouseY + "px" ).addClass("active top-arrow");
+          }
+          else // ok the space is insufficient so let div lay on the client's bottom
+          {
+            $target.css("top", (window.innerHeight - mouseY) + "px" ).addClass("active top-arrow");
+          }
 
-        // decide div's horizontal position
-        var horizontalPosition = mouseX - popupWidth/2;
-        if(horizontalPosition + popupWidth > window.innerWidth)
-        {
-          horizontalPosition = window.innerWidth - popupWidth;
-        }
-        if (horizontalPosition < 0)
-        {
-          horizontalPosition = 0;
-        }
-        $("#card-ins-" + buttonIndex)[0].style.left = String(horizontalPosition) + "px";
+          // decide div's horizontal position
+          var horizontalPosition = mouseX - popupWidth/2;
+          if(horizontalPosition + popupWidth > window.innerWidth)
+          {
+            horizontalPosition = window.innerWidth - popupWidth;
+          }
+          if (horizontalPosition < 0)
+          {
+            horizontalPosition = 0;
+          }
+          $target.css('left', horizontalPosition + "px");
 
-        // bring it up!
-        $("#card-ins-" + buttonIndex)[0].style.position = "absolute";
-        $("#card-ins-" + buttonIndex)[0].style.visibility = "visible";
+          // bring it up!
+          $target.fadeIn();
+        }        
+
         
         ev.stopPropagation(); //we don't want event passed to it's parent node
       }
@@ -246,10 +252,25 @@
   window.onclick = function() 
   {
     // so if click on document we want all popup disappear
-    var x = $(".card");
-    $(".card").each(
-      function(){this.style.visibility = "hidden";}
-      );
+    $(".popup").fadeOut();
   }
+
+
+  // 
+  $('.story-of-two .next').click(function(){
+    console.log('click next');
+    $(this).removeClass('next').addClass('current');
+
+    if ($(this).next()) {
+      $(this).next().removeClass('hidden').addClass('next');
+    }
+    if ($(this).prev()) {
+      $(this).prev().removeClass('current').addClass('prev');
+    }
+    if ($(this).prev().prev()) {    
+      $(this).prev().prev().removeClass('prev').addClass('hidden');
+    }
+  });
+
 
 })();
