@@ -195,9 +195,6 @@
   // create a popup when click leaves-highlight
   $("#leaves-highlight path").click(
       function(ev){
-
-
-
         // get mouse x and y(client based coordinate)
         var mouseX = ev.clientX;
         var mouseY = ev.clientY;
@@ -209,7 +206,7 @@
         var $target = $("#"+target);
 
         // first of all hide other popups
-        $(".popup").not("#"+target).fadeOut();
+        $(".popup").not("#"+target).fadeOut().removeClass("active");
 
         // then test if target already shows
         if (! $target.hasClass("active") )
@@ -228,7 +225,7 @@
           }
           else // ok the space is insufficient so let div lay on the client's bottom
           {
-            $target.css("top", (window.innerHeight - mouseY) + "px" ).addClass("active top-arrow");
+            $target.css("top", (window.innerHeight - popupHeight) + "px" ).addClass("active top-arrow");
           }
 
           // decide div's horizontal position
@@ -254,7 +251,7 @@
   window.onclick = function() 
   {
     // so if click on document we want all popup disappear
-    $(".popup").fadeOut();
+    $(".popup").fadeOut().removeClass("active");
   }
 
 
