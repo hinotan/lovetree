@@ -243,7 +243,6 @@
           // bring it up!
           $target.fadeIn();
         }        
-
         
         ev.stopPropagation(); //we don't want event passed to it's parent node
       }
