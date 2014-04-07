@@ -254,22 +254,28 @@
     $(".popup").fadeOut();
   }
 
-
-  // 
-  $('.story-of-two .next').click(function(){
+  var func = function(){
     console.log('click next');
     $(this).removeClass('next').addClass('current');
 
     if ($(this).next()) {
       $(this).next().removeClass('hidden').addClass('next');
+	  $(this).next().click(func);
     }
     if ($(this).prev()) {
       $(this).prev().removeClass('current').addClass('prev');
+	  // TODO: add prev click event handler here
     }
     if ($(this).prev().prev()) {    
       $(this).prev().prev().removeClass('prev').addClass('hidden');
+	  // delete event handler
+	  $(this).prev().prev().click(undefined);
     }
-  });
+  };
+  // 
+  $('.story-of-two .next').click(
+    func
+  );
 
 
 })();
