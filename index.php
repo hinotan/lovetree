@@ -47,7 +47,7 @@
 
 
 </head>
-<body>
+<body class="">
   <!--[if lt IE 7]>
     <p class="chromeframe">Warning! Your developer friend is in pain because you didn't upgrade your browser! Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
@@ -66,17 +66,16 @@
     <?php include_once('_svg-tree.php') ?>
   </div>
 
-  <div id="the-menu">
-
+  <hgroup>
     <h1 class="ellen-and-shin">Ellen & Shin</h1>
     <h2>We’re tying the knot!</h2>
-  </div>
+  </hgroup>
 
 </div>
 
 <?php include_once('_popup.php') ?>
 
-<div class="story-of-two">
+<div id="story-of-two">
   <ul class="">
     <li class="card text first-met current">
       <h3>First met, 2006, Shanghai</h3>
@@ -108,20 +107,24 @@
 
   <ul>
     <li class="home">
-      <a href=""><i></i><span>Back to the tree</span></a>
+      <a ><i></i><span>Back to the tree</span></a>
     </li>
     <li class="history">
-      <a href=""><i></i><span>Story of the two</span></a>
+      <a ><i></i><span>Story of the two</span></a>
     </li>
     <li class="rsvp">
-      <a href=""><i></i><span>RSVP</span></a>
+      <a ><i></i><span>RSVP</span></a>
     </li>
   </ul>
 </nav>
 
 <script src="js/script.js"></script>
 <script>
-  //$('')
+  $('nav .history a').click(function(){
+    // Show story-of-two slides
+    $('#story-of-two').fadeIn(1000);
+    $('body').addClass('show-story');
+  });
 </script>
 
 </body>
