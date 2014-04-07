@@ -1,3 +1,5 @@
+<?php include_once('_ascii.php') ?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -75,7 +77,7 @@
 <?php include_once('_popup.php') ?>
 
 <div class="story-of-two">
-  <ul class="slides">
+  <ul class="">
     <li class="card text first-met current">
       <h3>First met, 2006, Shanghai</h3>
       <p>It all started on the internet. Ellen and Shin knew each other in a chatroom of a game forum, and soon met offline. The chatroom group turned out to be way more close-knit than others. People hung out all the time and became friends for life.</p>
@@ -90,6 +92,12 @@
     <li class="card text dating hidden">
         <h3>Officially boyfriend and girlfriend, <br/>2012</h3>
         <p>Long distance sounded like a curse but once again the internet came to rescue. (What else can we celebrate more in this era!)</p>
+    </li>
+
+    <li class="card text commute hidden">
+        <h3>Commute for a date</h3>
+        <p>6 trips.<br/>134597.45km total.<br/>That’s 3 ⅓ rounds around the Equator!</p>
+        <p>And still one trip due <br/>early 2015...</p>
     </li>
 
 

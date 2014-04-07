@@ -1159,6 +1159,13 @@ nav .rsvp a i {
 .story-of-two .dating h3 {
   width: 120px;
 }
+.story-of-two .commute {
+  width: 240px;
+  height: 320px;
+  background: #f4f1d4 url(../images/earth.png) no-repeat 50% 15px;
+  padding: 100px 20px 0px;
+  text-align: center;
+}
 /* ------------------------
    MEDIA QUERIES
 ------------------------ */
