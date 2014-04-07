@@ -229,7 +229,7 @@
           }
 
           // decide div's horizontal position
-          var horizontalPosition = mouseX - popupWidth/2;
+          var horizontalPosition = mouseX - popupWidth/2 - 10;
           if(horizontalPosition + popupWidth + 20 > window.innerWidth) // look like must consider border width 10px
           {
             horizontalPosition = window.innerWidth - popupWidth - 20;
