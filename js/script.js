@@ -78,6 +78,9 @@
 
       $('#the-tree').removeClass('show-lines').addClass('show-color');
 
+      // add a animation effect indicating clickable leaves
+      leavesAnimationHandler = window.requestAnimationFrame(leavesAnimation);
+
     } else {
       this.current_frame++;
       for(var j=0, len = this.path.length; j<len;j++){
@@ -202,7 +205,6 @@
         //var buttonIndex = 1; //well, we can get which leaf is clicked in ev, now we just assume leave 1 has been clicked
         // get target element ID through data-target value
         var target = $(this).data('target');
-        console.log('Click leaf: '+target);
         var $target = $("#"+target);
 
         // first of all hide other popups
@@ -294,5 +296,53 @@
   };
   // 
   $('#story-of-two .next').click(func);
+
+// #leaves-highlight path {
+//   fill: #e7636d;
+//   -webkit-transition: 0.3s;
+//   -moz-transition: 0.3s;
+//   transition: 0.3s;
+//   -webkit-transform: rotate(10deg);
+//   -moz-transform: rotate(10deg);
+//   -ms-transform: rotate(10deg);
+//   -o-transform: rotate(10deg);
+//   transform: rotate(10deg);
+// }
+  var leavesAnimationHandler;
+  var intervalFrames = 60;
+  var leafIndex = 0;
+  var frameCount = 0;
+  var leavesAnimation = function()
+  {
+  	frameCount++;
+  	if (frameCount % intervalFrames == 0)
+  	{
+  		frameCount = 0;
+  		intervalFrames = Math.floor((Math.random()*120)+60); // random between 1s to 3s
+  		leafIndex = Math.floor((Math.random()*15)); // random which leaf
+  		var leaf = $("#leaves-highlight path")[leafIndex];
+  		var HighLight = function (obj)
+  		{
+	  		$(obj).css("fill", "#e7636d");
+	  		$(obj).css("-webkit-transform", "rotate(10deg)");
+	  		$(obj).css("-moz-transform", "rotate(10deg)");
+	  		$(obj).css("-ms-transform", "rotate(10deg)");
+	  		$(obj).css("-o-transform", "rotate(10deg)");
+	  		$(obj).css("transform", "rotate(10deg)");
+  		}
+  		var UnHighLight = function(obj)
+  		{
+  			$(obj).css("fill", "");
+	  		$(obj).css("-webkit-transform", "");
+	  		$(obj).css("-moz-transform", "");
+	  		$(obj).css("-ms-transform", "");
+	  		$(obj).css("-o-transform", "");
+	  		$(obj).css("transform", "");
+  		}
+  		HighLight(leaf);
+  		setTimeout(function(){UnHighLight(leaf)}, 2000); //set back to original color 2s later
+  	};
+  	window.requestAnimationFrame(leavesAnimation);
+  }
 
 })();
