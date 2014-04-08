@@ -51,15 +51,15 @@
 
 <div id="the-wrapper">
 
+  <hgroup>
+    <h1 class="ellen-and-shin">Ellen & Shin</h1>
+    <h2>We’re tying the knot!</h2>
+  </hgroup>
 
   <div id="the-tree" class="show-lines">
     <?php include_once('_svg-tree.php') ?>
   </div>
 
-  <hgroup>
-    <h1 class="ellen-and-shin">Ellen & Shin</h1>
-    <h2>We’re tying the knot!</h2>
-  </hgroup>
 
 </div>
 
