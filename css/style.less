@@ -291,8 +291,8 @@ nav {
 
 }
 
-
-@media (max-width: 1120px) {
+// Tree and title
+@media (min-width: 768px) and (max-width: 1119px) {
   #the-tree {
     svg {
       max-width: 100%;
@@ -321,5 +321,17 @@ nav {
 ------------------------ */
 
 
-//@import "../vendor/css/flexslider.css";
+@import "../vendor/css/flexslider.css";
+
+/* Control Nav */
+.flex-control-paging li a {
+  .square(6px);
+  background: lighten(@brown, 18%);
+}
+.flex-control-paging li a:hover {
+  background: @pink;
+}
+.flex-control-paging li a.flex-active {
+  background: @pink;
+}
 

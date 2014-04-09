@@ -1,7 +1,7 @@
 #the-wrapper {
   margin-top: 50px;
   width: 100%;
-  height: 100%;
+  //height: 100%;
 }
 
 hgroup {
@@ -18,6 +18,11 @@ hgroup {
   margin: 0 auto;
   max-width: 90%;
   background-position: center center;
+}
+
+.headline {
+  text-align: center;
+  font-size: 2em;
 }
 
 //////////////////////////////////// SVG ////////////////////////////////////
@@ -89,5 +94,49 @@ nav {
 
 #moments {
   z-index: 10;
-  display: none;
+  position: relative;
+  margin-top: 60px;
+  //display: none;
+
+  .flex-control-paging {
+    top: -40px;
+
+    li a {
+      .square(8px);
+    }
+  }
+
+  .flex-direction-nav {
+    display: none;
+  }
+
+  ul {
+    .clearfix;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: #fff;
+    border: 10px solid #fff;
+    .box-shadow(0 2px 8px rgba(0,0,0,0.3));
+  }
+
+  li:nth-child(5n) .card {
+    .transform(rotate(2deg));
+  }
+  li:nth-child(5n-1) .card {
+    .transform(rotate(-4deg));
+  }
+  li:nth-child(5n-2) .card {
+    .transform(rotate(3deg));
+  }
+  li:nth-child(5n-3) .card {
+    .transform(rotate(-10deg));
+  }
+  li:nth-child(5n-4) .card {
+    .transform(rotate(6deg));
+  }
 }
+
+

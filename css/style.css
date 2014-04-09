@@ -1,4 +1,6 @@
 @import "../vendor/css/onMediaQuery.css";
+
+@import "../vendor/css/flexslider.css";
 /*! normalize.css v1.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -689,7 +691,7 @@ h4 {
   color: #534235;
 }
 a {
-  color: #bb2830;
+  color: #e7636d;
   text-decoration: none;
 }
 p a:hover {
@@ -898,7 +900,6 @@ nav .rsvp a i {
   #the-wrapper {
     margin-top: 50px;
     width: 100%;
-    height: 100%;
   }
   hgroup {
     position: relative;
@@ -913,6 +914,10 @@ nav .rsvp a i {
     margin: 0 auto;
     max-width: 90%;
     background-position: center center;
+  }
+  .headline {
+    text-align: center;
+    font-size: 2em;
   }
   #the-tree {
     width: 100%;
@@ -963,7 +968,79 @@ nav .rsvp a i {
   }
   #moments {
     z-index: 10;
+    position: relative;
+    margin-top: 60px;
+  }
+  #moments .flex-control-paging {
+    top: -40px;
+  }
+  #moments .flex-control-paging li a {
+    height: 8px;
+    width: 8px;
+  }
+  #moments .flex-direction-nav {
     display: none;
+  }
+  #moments ul {
+    zoom: 1;
+    width: 90%;
+    margin: 0 auto;
+  }
+  #moments ul:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    content: ".";
+  }
+  #moments ul:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    content: ".";
+  }
+  #moments .card {
+    background: #fff;
+    border: 10px solid #fff;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  #moments li:nth-child(5n) .card {
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  #moments li:nth-child(5n-1) .card {
+    -webkit-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    -o-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+  #moments li:nth-child(5n-2) .card {
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+  #moments li:nth-child(5n-3) .card {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  #moments li:nth-child(5n-4) .card {
+    -webkit-transform: rotate(6deg);
+    -moz-transform: rotate(6deg);
+    -ms-transform: rotate(6deg);
+    -o-transform: rotate(6deg);
+    transform: rotate(6deg);
   }
 }
 /*
@@ -1387,7 +1464,7 @@ nav .rsvp a i {
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   
 }
-@media (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1119px) {
   #the-tree svg {
     max-width: 100%;
   }
@@ -1410,3 +1487,15 @@ nav .rsvp a i {
 /* ------------------------
    PLUGINS
 ------------------------ */
+/* Control Nav */
+.flex-control-paging li a {
+  height: 6px;
+  width: 6px;
+  background: #c3b1a7;
+}
+.flex-control-paging li a:hover {
+  background: #e7636d;
+}
+.flex-control-paging li a.flex-active {
+  background: #e7636d;
+}

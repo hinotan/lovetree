@@ -7,7 +7,10 @@ var queries = [
       console.log('Mobile callback. Maybe hook up some tel: numbers?');
 
       // Your mobile specific logic can go here.
-        $('.flexslider').flexslider();
+        $('#moments').flexslider({
+          animation: 'fade',
+          slideshowSpeed: 2000
+        });
 
       // Menu control
         $('nav .home a').click(function(){

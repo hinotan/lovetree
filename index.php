@@ -63,6 +63,7 @@
 
 </div>
 
+<h2 class="headline mobile">Moments</h2>
 <?php include_once('_popup.php') ?>
 
 <div id="story-of-two" class="flexslider">
