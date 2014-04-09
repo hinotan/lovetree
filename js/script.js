@@ -66,7 +66,7 @@ var queries = [
     },
     unmatch: function() {
       console.log('leaving big context!');
-      window.cancelAnimFrame(LeavesAnimation);
+      window.cancelAnimFrame(leavesAnimationHandler);
     }
   },
   {
@@ -402,7 +402,7 @@ var LeavesAnimation = function()
   		HighLight(leaf);
   		setTimeout(function(){UnHighLight(leaf)}, 2000); //set back to original color 2s later
   	};
-  	window.requestAnimFrame(LeavesAnimation);
+  	leavesAnimationHandler = window.requestAnimFrame(LeavesAnimation);
 }
 function EnableLeafHighLightAnimation()
 {
