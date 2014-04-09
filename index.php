@@ -63,10 +63,9 @@
 
 </div>
 
-<h2 class="headline mobile">Moments</h2>
-<?php include_once('_popup.php') ?>
 
-<div id="story-of-two" class="flexslider">
+<h2 class="headline mobile">Story of the two</h2>
+<div id="story-of-two" class="">
   <ul class="slides">
     <li class="card text first-met current">
       <h3>First met, 2006, Shanghai</h3>
@@ -94,7 +93,56 @@
   </ul>
 </div>
 
-<nav class="">
+
+
+<h2 class="headline mobile">Moments</h2>
+<?php include_once('_popup.php') ?>
+
+
+<h2 class="headline mobile">Our big days</h2>
+<div id="big-days">
+  <ul>
+    <li>
+      <h3>The Party</h3>
+      <p>
+        Sunday 4 May 2014<br/>
+        2pm - 5pm
+      </p>
+      <p>
+        High tea at<br/>
+        Martha’s Pantry<br/>
+        276 Cuba St
+      </p>
+      <p>
+        Do dress casually as the groom will be in his jeans!
+      </p>
+    </li>
+    <li>
+      <h3>The Ceremony</h3>
+      <p>
+        Monday 5 May 2014<br/>
+        2pm - 2:10pm
+      </p>
+      <p>
+        Registry office ceremony at<br/>
+        Level 3, Department of Internal Affairs<br/>
+        109 Featherston St
+      </p>
+      <p>
+        We know this is going to be a super brief and way less interesting ceremony but still, we’d really appreciate if you’d take a tea break from work to be our witness.
+
+        *Spoiler: No ring exchange. Still on its way. :(
+      </p>
+    </li>
+  </ul>
+</div>
+
+
+<footer>
+  &copy; with &hearts; &nbsp; Ellen Zheng &amp; Shin Wong
+</footer>
+
+<nav class="desktop">
 
   <ul>
     <li class="home">
