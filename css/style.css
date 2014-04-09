@@ -1105,6 +1105,7 @@ nav .rsvp a i {
     position: fixed;
     right: 0;
     top: 0;
+    z-index: -1;
   }
   #the-tree svg {
     max-height: 100%;
@@ -1385,6 +1386,17 @@ nav .rsvp a i {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   
+}
+@media (max-width: 1120px) {
+  #the-tree svg {
+    max-width: 100%;
+  }
+  hgroup {
+    width: 40%;
+  }
+  hgroup h2 {
+    top: -20px;
+  }
 }
 /*
   ####################################################

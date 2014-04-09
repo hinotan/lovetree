@@ -62,7 +62,8 @@ var queries = [
       // setting 'call_for_each_context' to false means this callback will only fire once across this range of breakpoints
     },
     unmatch: function() {
-      console.log('leaving small context!');
+      console.log('leaving big context!');
+      window.cancelAnimationFrame(LeavesAnimation);
     }
   },
   {
