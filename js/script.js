@@ -63,7 +63,7 @@ var queries = [
     },
     unmatch: function() {
       console.log('leaving big context!');
-      window.cancelAnimationFrame(LeavesAnimation);
+      window.cancelAnimFrame(LeavesAnimation);
     }
   },
   {
@@ -391,20 +391,10 @@ var LeavesAnimation = function()
   		var HighLight = function (obj)
   		{
 	  		$(obj).css("fill", "#e7636d");
-	  		$(obj).css("-webkit-transform", "rotate(10deg)");
-	  		$(obj).css("-moz-transform", "rotate(10deg)");
-	  		$(obj).css("-ms-transform", "rotate(10deg)");
-	  		$(obj).css("-o-transform", "rotate(10deg)");
-	  		$(obj).css("transform", "rotate(10deg)");
   		}
   		var UnHighLight = function(obj)
   		{
   			$(obj).css("fill", "");
-	  		$(obj).css("-webkit-transform", "");
-	  		$(obj).css("-moz-transform", "");
-	  		$(obj).css("-ms-transform", "");
-	  		$(obj).css("-o-transform", "");
-	  		$(obj).css("transform", "");
   		}
   		HighLight(leaf);
   		setTimeout(function(){UnHighLight(leaf)}, 2000); //set back to original color 2s later
