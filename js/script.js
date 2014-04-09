@@ -5,7 +5,21 @@ var queries = [
     context: 'mobile',
     match: function() {
       console.log('Mobile callback. Maybe hook up some tel: numbers?');
+
       // Your mobile specific logic can go here.
+        $('.flexslider').flexslider();
+
+      // Menu control
+        $('nav .home a').click(function(){
+          $('.active-screen').fadeOut(1000);
+          $('#moments').fadeIn(1000).addClass('active-screen');
+          $('body').addClass('show-moments');
+        });
+        $('nav .history a').click(function(){
+          // Show story-of-two slides
+          $('#story-of-two').fadeIn(1000).addClass('active-screen');
+          $('body').addClass('show-story');
+        });
     },
     unmatch: function() {
       // We're leaving mobile.
@@ -33,6 +47,17 @@ var queries = [
         EnablePopup();
         EnableStorySlide();
         EnableLeafHighLightAnimation();
+
+      // Menu control
+        $('nav .home a').click(function(){
+          $('.active-screen').fadeOut(1000);
+          $('body').removeClass();
+        });
+        $('nav .history a').click(function(){
+          // Show story-of-two slides
+          $('#story-of-two').fadeIn(1000).addClass('active-screen');
+          $('body').addClass('show-story');
+        });
 
       // setting 'call_for_each_context' to false means this callback will only fire once across this range of breakpoints
     },
@@ -389,11 +414,6 @@ function EnableLeafHighLightAnimation()
 {
   window.enableLeafHighLightAnimation = true;
 };
-/*
-(function() {
-  'use strict';
-  EnableSvgStroke();
-  EnablePopup();
-  EnableStorySlide();
-  EnableLeafHighLightAnimation();
-})(); */
+
+
+

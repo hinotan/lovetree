@@ -148,6 +148,7 @@ nav {
 #moments {
   .no-list-style;
   z-index: 10;
+  display: none;
 }
 
 //////////////////////////////////// STORY ////////////////////////////////////
@@ -204,7 +205,12 @@ nav {
 
 @media (max-width: 767px) {
   .desktop {display: none}
-  .wrap {width: 90%;}
+  html {
+    font-family: "mobile";
+  }
+  body:after {
+    content: "mobile";
+  }
 
   @import "_r-mobile.less";
 }
