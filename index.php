@@ -65,8 +65,8 @@
 
 <?php include_once('_popup.php') ?>
 
-<div id="story-of-two">
-  <ul class="">
+<div id="story-of-two" class="flexslider">
+  <ul class="slides">
     <li class="card text first-met current">
       <h3>First met, 2006, Shanghai</h3>
       <p>It all started on the internet. Ellen and Shin knew each other in a chatroom of a game forum, and soon met offline. The chatroom group turned out to be way more close-knit than others. People hung out all the time and became friends for life.</p>
@@ -97,13 +97,24 @@
 
   <ul>
     <li class="home">
-      <a ><i></i><span>Back to the tree</span></a>
+      <a >
+        <i></i>
+        <span class="desktop">Back to the tree</span>
+        <span class="mobile">Moments</span>
+      </a>
     </li>
     <li class="history">
-      <a ><i></i><span>Story of the two</span></a>
+      <a >
+        <i></i>
+        <span class="desktop">Story of the two</span>
+        <span class="mobile">Story</span>
+      </a>
     </li>
     <li class="rsvp">
-      <a ><i></i><span>RSVP</span></a>
+      <a >
+        <i></i>
+        <span class="">RSVP</span>
+      </a>
     </li>
   </ul>
 </nav>

@@ -1,57 +1,84 @@
+#the-wrapper {
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+}
+
 hgroup {
-    position: static;
-    width: 100%;
+  position: relative;
+  h2 {
+    text-align: center;
+    width: 85%;
+    top: -10px;
+    position: absolute;
+  }
+}
 
-    h2 {
-      text-align: center;
-      width: 80%;
-      top: -10px;
+.ellen-and-shin {
+  margin: 0 auto;
+  max-width: 90%;
+  background-position: center center;
+}
+
+//////////////////////////////////// SVG ////////////////////////////////////
+
+#the-tree {
+  width: 100%;
+  margin-top: -40px;
+  z-index: -1;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//////////////////////////////////// nav ////////////////////////////////////
+
+nav {
+  top: 0;
+  height: 30px;
+  width: 100%;
+
+  li {
+    width: 33.3%;
+    .floatL;
+
+    &.rsvp {
+      width: 33.4%;
     }
   }
-  .ellen-and-shin {
-    margin: 20px auto 0;
-    max-width: 90%;
-    background-position: center top;
-  }
-  #the-tree {
-    width: 100%;
-    position: static;
-    margin-top: -40px;
-    z-index: -1;
 
-    svg {
-      position: static;
-      max-width: 100%;
-    }
+  a {
+    overflow: hidden;
+    height: 30px;
+    .border-radius(0 0 5px 5px);
   }
 
-  nav {
-    top: 0;
-    height: 50px;
-    width: 100%;
+  i {
+    margin-left: 10px;
+    .floatL;
+    height: 100% !important;
+  }
+  span {
+    .floatR;
+    margin: 5px 10px 0;
+  }
 
-    li {
-      width: 33.3%;
-      .floatL;
-    }
-
-    a {
-      overflow: hidden;
-      height: 50px;
-    }
-
+  .home a {
     i {
-      position: absolute;
-    }
-
-    .home a {
-      i {
-        top: 3px;
-      }
-    }
-    .rsvp a {
-      i {
-        top: -22px;
-      }
+      background-size: 70% !important;
     }
   }
+  .history a {
+    i {
+      background-size: 80% !important;
+    }
+  }
+  .rsvp a {
+    i {
+      background-size: 80% !important;
+      background-position: 0 -14px;
+    }
+  }
+}
