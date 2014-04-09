@@ -783,55 +783,19 @@ hgroup h2 {
   background-size: contain;
 }
 nav {
-  width: 50px;
-  height: 100%;
   position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
 }
 nav ul {
   height: 100%;
 }
-nav li {
-  width: 50px;
-  height: 33.3%;
-  cursor: pointer;
-}
 nav a {
   cursor: pointer;
   display: block;
-  width: 50px;
-  height: 100%;
-  margin-left: -45px;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  transition: 0.3s;
-  -moz-border-radius: 0;
-  border-radius: 0;
   background: url(../images/dot-bg.png);
   color: inherit;
 }
-nav li:hover a {
-  -moz-border-radius: 0 5px 5px 0;
-  border-radius: 0 5px 5px 0;
-  margin-left: 0;
-}
 nav span {
-  margin-left: 5px;
-  font-size: 1.125em;
   display: block;
-  width: 200px;
-  -webkit-transform-origin: 0 100%;
-  -moz-transform-origin: 0 100%;
-  -ms-transform-origin: 0 100%;
-  -o-transform-origin: 0 100%;
-  transform-origin: 0 100%;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
 }
 nav i {
   display: block;
@@ -839,7 +803,6 @@ nav i {
 nav .home a {
   background-color: #b1c77a;
   color: #534235;
-  padding: 5px 0 0 5px;
 }
 nav .home a i {
   height: 43px;
@@ -849,24 +812,20 @@ nav .home a i {
 nav .history a {
   background-color: #e7636d;
   color: #f4f1d4;
-  padding: 5px 0 0 5px;
 }
 nav .history a i {
   height: 35px;
   width: 34px;
   background: url(../images/i-heart.png) no-repeat;
-  margin: 5px 0 0 0;
 }
 nav .rsvp a {
   background-color: #8da571;
   color: #f4f1d4;
-  padding: 5px 0 0 5px;
 }
 nav .rsvp a i {
   height: 70px;
   width: 48px;
   background: url(../images/i-watch.png) no-repeat top right;
-  margin-left: -15px;
 }
 #the-tree {
   -khtml-opacity: 0.9;
@@ -1209,6 +1168,52 @@ nav .rsvp a i {
   .wrap {
     width: 90%;
   }
+  hgroup {
+    position: static;
+    width: 100%;
+  }
+  hgroup h2 {
+    text-align: center;
+    width: 80%;
+    top: -10px;
+  }
+  .ellen-and-shin {
+    margin: 20px auto 0;
+    max-width: 90%;
+    background-position: center top;
+  }
+  #the-tree {
+    width: 100%;
+    position: static;
+    margin-top: -40px;
+    z-index: -1;
+  }
+  #the-tree svg {
+    position: static;
+    max-width: 100%;
+  }
+  nav {
+    top: 0;
+    height: 50px;
+    width: 100%;
+  }
+  nav li {
+    width: 33.3%;
+    float: left;
+  }
+  nav a {
+    overflow: hidden;
+    height: 50px;
+  }
+  nav i {
+    position: absolute;
+  }
+  nav .home a i {
+    top: 3px;
+  }
+  nav .rsvp a i {
+    top: -22px;
+  }
 }
 /*
    ###################
@@ -1330,6 +1335,92 @@ nav .rsvp a i {
   .g-9col.omega,
   .g-10col.omega {
     margin-right: 0;
+  }
+  nav {
+    width: 50px;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+  }
+  nav ul {
+    height: 100%;
+  }
+  nav li {
+    width: 50px;
+    height: 33.3%;
+    cursor: pointer;
+  }
+  nav a {
+    cursor: pointer;
+    display: block;
+    width: 50px;
+    height: 100%;
+    margin-left: -45px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: url(../images/dot-bg.png);
+    color: inherit;
+  }
+  nav li:hover a {
+    -moz-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+    margin-left: 0;
+  }
+  nav span {
+    margin-left: 5px;
+    font-size: 1.125em;
+    display: block;
+    width: 200px;
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  nav i {
+    display: block;
+  }
+  nav .home a {
+    background-color: #b1c77a;
+    color: #534235;
+    padding: 5px 0 0 5px;
+  }
+  nav .home a i {
+    height: 43px;
+    width: 33px;
+    background: url(../images/i-leaf.png) no-repeat;
+  }
+  nav .history a {
+    background-color: #e7636d;
+    color: #f4f1d4;
+    padding: 5px 0 0 5px;
+  }
+  nav .history a i {
+    height: 35px;
+    width: 34px;
+    background: url(../images/i-heart.png) no-repeat;
+    margin: 5px 0 0 0;
+  }
+  nav .rsvp a {
+    background-color: #8da571;
+    color: #f4f1d4;
+    padding: 5px 0 0 5px;
+  }
+  nav .rsvp a i {
+    height: 70px;
+    width: 48px;
+    background: url(../images/i-watch.png) no-repeat top right;
+    margin-left: -15px;
   }
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
