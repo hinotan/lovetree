@@ -841,10 +841,6 @@ nav .rsvp a i {
   margin: 10px 0;
   text-align: center;
 }
-#moments {
-  z-index: 10;
-  display: none;
-}
 #moments,
 #moments ul,
 #moments ol {
@@ -964,6 +960,10 @@ nav .rsvp a i {
   nav .rsvp a i {
     background-size: 80% !important;
     background-position: 0 -14px;
+  }
+  #moments {
+    z-index: 10;
+    display: none;
   }
 }
 /*
