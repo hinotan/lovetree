@@ -56,7 +56,6 @@ MQ.init(queries);
 
 
 // http://tympanus.net/codrops/2013/12/30/svg-drawing-animation/
-
 function EnableSvgStroke()
 {
  	var docElem = window.document.documentElement;
@@ -124,7 +123,7 @@ function EnableSvgStroke()
       $('#the-tree').removeClass('show-lines').addClass('show-color');
 
       // add a animation effect indicating clickable leaves
-      if (enableLeafHeghLightAnimation) 
+      if (window.enableLeafHighLightAnimation == true)
       	leavesAnimationHandler = window.requestAnimationFrame(LeavesAnimation);
 
     } else {
@@ -386,13 +385,10 @@ var LeavesAnimation = function()
   	};
   	window.requestAnimationFrame(LeavesAnimation);
 }
-var enableLeafHighLightAnimation = false;
-
 function EnableLeafHighLightAnimation()
 {
-  enableLeafHighLightAnimation = true;
+  window.enableLeafHighLightAnimation = true;
 };
-
 /*
 (function() {
   'use strict';
