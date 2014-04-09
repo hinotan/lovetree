@@ -1,17 +1,64 @@
-/**
- * svganimations.js v1.0.0
- * http://www.codrops.com
- *
- * the svg path animation is based on http://24ways.org/2013/animating-vectors-with-svg/ by Brian Suda (@briansuda)
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2013, Codrops
- * http://www.codrops.com
- */
- var EnableSvgStroke = function()
- {
+// onMediaQuery scripts...
+
+var queries = [
+  {
+    context: 'mobile',
+    match: function() {
+      console.log('Mobile callback. Maybe hook up some tel: numbers?');
+      // Your mobile specific logic can go here.
+    },
+    unmatch: function() {
+      // We're leaving mobile.
+    }
+  },
+  {
+    context: 'tablet',
+    match: function() {
+      console.log('skinny callback! Swap the class on the body element.');
+      // Your tablet specific logic can go here.
+    },
+    unmatch: function() {
+      console.log('leaving skinny context!');
+    }
+  },
+  {
+    context: ['tablet', 'desktop'],
+    call_for_each_context: false,
+    match: function() {
+      console.log('a callback which spans multiple breakpoints, tablet and desktop!');
+
+      // Now do things proper for big screens.
+        'use strict';
+        EnableSvgStroke();
+        EnablePopup();
+        EnableStorySlide();
+        EnableLeafHighLightAnimation();
+
+      // setting 'call_for_each_context' to false means this callback will only fire once across this range of breakpoints
+    },
+    unmatch: function() {
+      console.log('leaving small context!');
+    }
+  },
+  {
+    context: 'desktop',
+    match: function() {
+      console.log('desktop callback woohoo! Load some heavy desktop JS badddness.');
+      // your desktop specific logic can go here.
+    }
+  }
+];
+// Go!
+MQ.init(queries);
+
+
+
+
+
+// http://tympanus.net/codrops/2013/12/30/svg-drawing-animation/
+
+var EnableSvgStroke = function()
+{
  	var docElem = window.document.documentElement;
 
   window.requestAnimFrame = function(){
@@ -97,17 +144,17 @@
   function getViewportH() {
     var client = docElem['clientHeight'],
       inner = window['innerHeight'];
-     
+
     if( client < inner )
       return inner;
     else
       return client;
   }
- 
+
   function scrollY() {
     return window.pageYOffset || docElem.scrollTop;
   }
- 
+
   // http://stackoverflow.com/a/5598797/989439
   function getOffset( el ) {
     var offsetTop = 0, offsetLeft = 0;
@@ -246,8 +293,8 @@ var EnablePopup = function ()
 
           // bring it up!
           $target.fadeIn();
-        }        
-        
+        }
+
         ev.stopPropagation(); //we don't want event passed to it's parent node
       }
     );
@@ -275,7 +322,7 @@ var EnableStorySlide = function()
       // add next click event handler here
       $(this).next().click(func);
     }
-    if ($(this).next().next()) {    
+    if ($(this).next().next()) {
       $(this).next().next().removeClass('next').addClass('hidden');
       // delete event handler
       $(this).next().next().click(undefined);
@@ -293,7 +340,7 @@ var EnableStorySlide = function()
       $(this).prev().removeClass('current').addClass('prev');
       $(this).prev().click(funcPrev);
     }
-    if ($(this).prev().prev()) {    
+    if ($(this).prev().prev()) {
       $(this).prev().prev().removeClass('prev').addClass('hidden');
     // delete event handler
     $(this).prev().prev().click(undefined);
@@ -345,10 +392,11 @@ var EnableLeafHighLightAnimation = function ()
   enableLeafHeghLightAnimation = true;
 };
 
+/*
 (function() {
   'use strict';
   EnableSvgStroke();
   EnablePopup();
   EnableStorySlide();
   EnableLeafHighLightAnimation();
-})();
+})(); */

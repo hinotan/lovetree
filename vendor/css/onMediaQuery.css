@@ -21,3 +21,24 @@ html {
 body:after {
   display: none;
 }
+
+
+/*
+@media screen and (min-width: 35em) {
+  html {
+  	font-family: "tablet";
+  }
+  body:after {
+  	content: "tablet";
+  }
+}
+
+@media screen and (min-width: 56em) {
+	html {
+		font-family: "desktop";
+	}
+	body:after {
+		content: "desktop";
+	}
+}
+*/

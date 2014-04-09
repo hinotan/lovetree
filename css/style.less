@@ -3,7 +3,7 @@
 @import "_mixin.less";
 @import "_typography.less";
 
-
+@import "../vendor/css/onMediaQuery.css";
 
 
 //////////////// Basic ////////////////
@@ -419,64 +419,7 @@ nav {
   .desktop {display: none}
   .wrap {width: 90%;}
 
-  hgroup {
-    position: static;
-    width: 100%;
-
-    h2 {
-      text-align: center;
-      width: 80%;
-      top: -10px;
-    }
-  }
-  .ellen-and-shin {
-    margin: 20px auto 0;
-    max-width: 90%;
-    background-position: center top;
-  }
-  #the-tree {
-    width: 100%;
-    position: static;
-    margin-top: -40px;
-    z-index: -1;
-
-    svg {
-      position: static;
-      max-width: 100%;
-    }
-  }
-
-  nav {
-    top: 0;
-    height: 50px;
-    width: 100%;
-
-    li {
-      width: 33.3%;
-      .floatL;
-    }
-
-    a {
-      overflow: hidden;
-      height: 50px;
-    }
-
-    i {
-      position: absolute;
-    }
-
-    .home a {
-      i {
-        top: 3px;
-      }
-    }
-    .rsvp a {
-      i {
-        top: -22px;
-      }
-    }
-  }
-
+  @import "_r-mobile.less";
 }
 
 
@@ -495,24 +438,12 @@ nav {
 */
 
 @media (min-width: 768px) and (max-width: 979px) {
-  @col: 44px;
-  @gap: 20px;
-  body {
-    //font-size: 87.5%;
+  html {
+    font-family: "tablet";
   }
-  .wrap {
-    width: (@col + @gap) * 12 - @gap; //748px
+  body:after {
+    content: "tablet";
   }
-  .g-2col { width: (@col + @gap) * 2 - @gap }
-  .g-3col { width: (@col + @gap) * 3 - @gap }
-  .g-4col { width: (@col + @gap) * 4 - @gap }
-  .g-5col { width: (@col + @gap) * 5 - @gap }
-  .g-6col { width: (@col + @gap) * 6 - @gap }
-  .g-7col { width: (@col + @gap) * 7 - @gap }
-  .g-8col { width: (@col + @gap) * 8 - @gap }
-  .g-9col { width: (@col + @gap) * 9 - @gap }
-  .g-10col { width: (@col + @gap) * 10 - @gap }
-
 
 }
 
@@ -534,21 +465,12 @@ nav {
 */
 
 @media (min-width: 980px) {
-  @col: 60px;
-  @gap: 20px;
-  .wrap {
-    width: (@col + @gap) * 12 - @gap; //940px
+  html {
+    font-family: "desktop";
   }
-  .g-2col { width: (@col + @gap) * 2 - @gap }
-  .g-3col { width: (@col + @gap) * 3 - @gap }
-  .g-4col { width: (@col + @gap) * 4 - @gap }
-  .g-5col { width: (@col + @gap) * 5 - @gap }
-  .g-6col { width: (@col + @gap) * 6 - @gap }
-  .g-7col { width: (@col + @gap) * 7 - @gap }
-  .g-8col { width: (@col + @gap) * 8 - @gap }
-  .g-9col { width: (@col + @gap) * 9 - @gap }
-  .g-10col { width: (@col + @gap) * 10 - @gap }
-
+  body:after {
+    content: "desktop";
+  }
 }
 
 
@@ -566,94 +488,8 @@ nav {
 
 @media (min-width: 768px) {
   .mobile {display: none}
-  .g-2col,.g-3col,.g-4col,.g-5col,.g-6col,.g-7col,.g-8col,.g-9col, .g-10col {
-    margin-right: 20px;
-    .floatL;
 
-    &.omega { // last one in a row
-      margin-right: 0;
-    }
-  }
-
-
-
-
-
-  nav {
-    width: 50px;
-    height: 100%;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-
-    ul {
-      height: 100%;
-    }
-    li {
-      width: 50px;
-      height: 33.3%;
-      cursor: pointer;
-    }
-    a {
-      cursor: pointer;
-      display: block;
-      width: 50px;
-      height: 100%;
-      margin-left: -45px;
-      .transition;
-      .border-radius(0);
-      background: url(../images/dot-bg.png);
-      color: inherit;
-    }
-    li:hover a {
-      .border-radius(0 5px 5px 0);
-      margin-left: 0;
-      //width: 50px;
-    }
-
-    span {
-      margin-left: 5px;
-      font-size: 1.125em;
-      display: block;
-      width: 200px;
-      .transform-origin(0 100%);
-      .transform(rotate(90deg));
-    }
-    i {
-      display: block;
-    }
-
-    .home a {
-      background-color: @green;
-      color: @ink;
-      padding: 5px 0 0 5px;
-      i {
-        .size(33px, 43px);
-        background: url(../images/i-leaf.png) no-repeat;
-      }
-    }
-    .history a {
-      background-color: @pink;
-      color: @paper;
-      padding: 5px 0 0 5px;
-      i {
-        .size(34px, 35px);
-        background: url(../images/i-heart.png) no-repeat;
-        margin: 5px 0 0 0;
-      }
-    }
-    .rsvp a {
-      background-color: @darkGreen;
-      color: @paper;
-      padding: 5px 0 0 5px;
-      i {
-        .size(48px, 70px);
-        background: url(../images/i-watch.png) no-repeat top right;
-        margin-left: -15px;
-      }
-    }
-  }
+  @import "_r-tablet-and-desktop.less";
 
 }
 
@@ -680,8 +516,6 @@ nav {
    PLUGINS
 ------------------------ */
 
-.flexslider {
-  .no-list-style;
-}
+
 //@import "../vendor/css/flexslider.css";
 
