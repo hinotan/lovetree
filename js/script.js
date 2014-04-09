@@ -57,7 +57,7 @@ MQ.init(queries);
 
 // http://tympanus.net/codrops/2013/12/30/svg-drawing-animation/
 
-var EnableSvgStroke = function()
+function EnableSvgStroke()
 {
  	var docElem = window.document.documentElement;
 
@@ -240,9 +240,9 @@ var EnableSvgStroke = function()
   } else {
     console.log('show-color');
   }
- };
+};
 
-var EnablePopup = function ()
+function EnablePopup()
 {
   // create a popup when click leaves-highlight
   $("#leaves-highlight path").click(
@@ -307,9 +307,9 @@ var EnablePopup = function ()
 
 };
 
-var EnableStorySlide = function()
+function EnableStorySlide()
 {
-	  var funcPrev = function()
+	var funcPrev = function()
   {
     $(this).removeClass('prev').addClass('current');
 
@@ -386,10 +386,11 @@ var LeavesAnimation = function()
   	};
   	window.requestAnimationFrame(LeavesAnimation);
 }
-var enableLeafHeghLightAnimation = false;
-var EnableLeafHighLightAnimation = function ()
+var enableLeafHighLightAnimation = false;
+
+function EnableLeafHighLightAnimation()
 {
-  enableLeafHeghLightAnimation = true;
+  enableLeafHighLightAnimation = true;
 };
 
 /*
