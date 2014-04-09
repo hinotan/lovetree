@@ -149,7 +149,7 @@ function EnableSvgStroke()
 
       // add a animation effect indicating clickable leaves
       if (window.enableLeafHighLightAnimation == true)
-      	leavesAnimationHandler = window.requestAnimationFrame(LeavesAnimation);
+      	leavesAnimationHandler = window.requestAnimFrame(LeavesAnimation);
 
     } else {
       this.current_frame++;
@@ -408,7 +408,7 @@ var LeavesAnimation = function()
   		HighLight(leaf);
   		setTimeout(function(){UnHighLight(leaf)}, 2000); //set back to original color 2s later
   	};
-  	window.requestAnimationFrame(LeavesAnimation);
+  	window.requestAnimFrame(LeavesAnimation);
 }
 function EnableLeafHighLightAnimation()
 {
