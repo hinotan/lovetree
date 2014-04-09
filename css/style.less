@@ -1,0 +1,308 @@
+@import "_normalize.less";
+@import "_light-bootstrap.less";
+@import "_mixin.less";
+@import "_typography.less";
+
+@import "../vendor/css/onMediaQuery.css";
+
+
+//////////////////////////////////// Basic ////////////////////////////////////
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: @paper; // url('../images/bg-texture.png');
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.wrap {
+  .clear;
+  .clearfix;
+  .center-block;
+}
+
+a {
+  .transition(color .3s ease);
+}
+
+
+#the-wrapper {
+}
+
+hgroup {
+}
+
+.ellen-and-shin {
+  .hide-text;
+  .size(516px, 148px);
+  max-width: 100%;
+  margin: 0;
+
+  .click-through-div('../images/ellen-and-shin2.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: contain;
+}
+
+//////////////////////////////////// nav ////////////////////////////////////
+
+nav {
+  position: fixed;
+
+  a {
+    cursor: pointer;
+    display: block;
+    background: url(../images/dot-bg.png);
+    color: inherit;
+  }
+
+  span {
+    display: block;
+  }
+  i {
+    display: block;
+  }
+
+  .home a {
+    background-color: @green;
+    color: @ink;
+    i {
+      .size(33px, 43px);
+      background: url(../images/i-leaf.png) no-repeat;
+    }
+  }
+  .history a {
+    background-color: @pink;
+    color: @paper;
+    i {
+      .size(34px, 35px);
+      background: url(../images/i-heart.png) no-repeat;
+    }
+  }
+  .rsvp a {
+    background-color: @darkGreen;
+    color: @paper;
+    i {
+      .size(48px, 70px);
+      background: url(../images/i-watch.png) no-repeat top right;
+    }
+  }
+}
+
+
+//////////////////////////////////// SVG ////////////////////////////////////
+
+#the-tree {
+  //z-index: 9;
+  .opacity(90);
+
+  #birdie, #tree {
+    .opacity(100);
+  }
+  #lines {
+    .opacity(0);
+  }
+
+}
+
+
+
+
+//////////////////////////////////// CARD ////////////////////////////////////
+
+.card {
+  background: @paper;
+  position: relative;
+  text-shadow: 0 1px @paper;
+
+  &.ins {
+
+    .img-wrapper {
+      position: relative;
+      img {
+        max-width: 100%;
+      }
+      .shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        .box-shadow(inset 0 0 20px rgba(0,0,0,0.2));
+      }
+
+    }
+
+    figcaption {
+      color: @pink;
+      margin: 10px 0;
+      text-align: center;
+    }
+  }
+
+}
+
+#moments {
+  .no-list-style;
+  z-index: 10;
+}
+
+//////////////////////////////////// STORY ////////////////////////////////////
+
+#story-of-two {
+  display: none;
+  .no-list-style;
+  z-index: 10;
+
+
+  .first-met {
+
+  }
+
+  .move-apart {
+
+  }
+
+  .dating {
+
+  }
+
+  .commute {
+
+  }
+}
+
+
+
+.show-story {
+  #story-of-two {
+    display: block;
+  }
+}
+
+
+
+
+/* ------------------------
+   MEDIA QUERIES
+------------------------ */
+
+// S: Landscape phone to desktop/tablet
+/*
+   #########
+  # |     | #              ##########
+  # | . . | #           ######     ####
+  # |     | #            #######
+  # |  v  | #                  #######
+  # |_____| #           ####     ######
+  #   ( )   #            ###########
+   #########
+*/
+
+@media (max-width: 767px) {
+  .desktop {display: none}
+  .wrap {width: 90%;}
+
+  @import "_r-mobile.less";
+}
+
+
+// --------------------------------------------------
+
+// M: Tablet to desktop
+/*
+   ###################
+  #  --------------   #           ###         ###
+  # |              |  #           ######    #####
+  # |   -     \    |-.#           ####### #######
+  # |   -     /    |-`#           ###  #####  ###
+  # |              |  #           ###   ###   ###
+  #  --------------   #           ###         ###
+   ###################
+*/
+
+@media (min-width: 768px) and (max-width: 979px) {
+  html {
+    font-family: "tablet";
+  }
+  body:after {
+    content: "tablet";
+  }
+
+}
+
+
+// --------------------------------------------------
+
+// L: Large desktop and up
+/*
+   ######################
+  ##                    ##
+  ##     O   |   O      ##           ####
+  ##        _|          ##           ####
+  ##      -_____-       ##           ####
+  ##                    ##           ####
+  ##---------==---------##           ####
+   ######################            ##############
+           /::::\                    ##############
+         ==========
+*/
+
+@media (min-width: 980px) {
+  html {
+    font-family: "desktop";
+  }
+  body:after {
+    content: "desktop";
+  }
+}
+
+
+// --------------------------------------------------
+
+// M+L: Tablet + desktop
+/*
+  ###         ###          ####
+  ######    #####          ####
+  ####### #######    ##    ####
+  ###  #####  ###  ######  ####
+  ###   ###   ###    ##    ##############
+  ###         ###          ##############
+*/
+
+@media (min-width: 768px) {
+  .mobile {display: none}
+
+  @import "_r-tablet-and-desktop.less";
+
+}
+
+
+
+// General @2x
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+
+}
+
+
+
+/*
+  ####################################################
+  --------------------------------------------------
+  ################################################
+  ##############################################
+  ################################################
+  --------------------------------------------------
+  ####################################################
+*/
+
+/* ------------------------
+   PLUGINS
+------------------------ */
+
+
+//@import "../vendor/css/flexslider.css";
+
