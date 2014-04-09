@@ -1,4 +1,4 @@
-<div id="moments" class="flexslider">
+<div id="moments" class="">
   <ul class="slides">
     <li>
       <div id="popup1" class="card ins popup">

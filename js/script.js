@@ -7,7 +7,7 @@ var queries = [
       console.log('Mobile callback. Maybe hook up some tel: numbers?');
 
       // Your mobile specific logic can go here.
-        $('#moments').flexslider({
+        $('#moments').addClass('flexslider').flexslider({
           animation: 'fade',
           slideshowSpeed: 2000
         });
@@ -26,6 +26,7 @@ var queries = [
     },
     unmatch: function() {
       // We're leaving mobile.
+        $('#moments').flexslider('stop').removeClass('flexslider');
     }
   },
   {
@@ -318,6 +319,7 @@ function EnablePopup()
             horizontalPosition = 0;
           }
           $target.css('left', horizontalPosition + "px");
+          $target.parent().css('opacity',1).css('position','static');
 
           // bring it up!
           $target.fadeIn();

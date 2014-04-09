@@ -1460,6 +1460,10 @@ nav .rsvp a i {
   .show-story #story-of-two {
     display: block;
   }
+  .flex-control-nav,
+  .flex-direction-nav {
+    display: none;
+  }
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   
