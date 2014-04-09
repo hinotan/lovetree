@@ -10,11 +10,9 @@
  * Copyright 2013, Codrops
  * http://www.codrops.com
  */
-(function() {
-
-  'use strict';
-
-  var docElem = window.document.documentElement;
+ var EnableSvgStroke = function()
+ {
+ 	var docElem = window.document.documentElement;
 
   window.requestAnimFrame = function(){
     return (
@@ -79,7 +77,8 @@
       $('#the-tree').removeClass('show-lines').addClass('show-color');
 
       // add a animation effect indicating clickable leaves
-      leavesAnimationHandler = window.requestAnimationFrame(leavesAnimation);
+      if (enableLeafHeghLightAnimation) 
+      	leavesAnimationHandler = window.requestAnimationFrame(LeavesAnimation);
 
     } else {
       this.current_frame++;
@@ -194,7 +193,10 @@
   } else {
     console.log('show-color');
   }
+ };
 
+var EnablePopup = function ()
+{
   // create a popup when click leaves-highlight
   $("#leaves-highlight path").click(
       function(ev){
@@ -256,8 +258,11 @@
     $(".popup").fadeOut().removeClass("active");
   }
 
+};
 
-  var funcPrev = function()
+var EnableStorySlide = function()
+{
+	  var funcPrev = function()
   {
     $(this).removeClass('prev').addClass('current');
 
@@ -296,28 +301,18 @@
   };
   // 
   $('#story-of-two .next').click(func);
+};
 
-// #leaves-highlight path {
-//   fill: #e7636d;
-//   -webkit-transition: 0.3s;
-//   -moz-transition: 0.3s;
-//   transition: 0.3s;
-//   -webkit-transform: rotate(10deg);
-//   -moz-transform: rotate(10deg);
-//   -ms-transform: rotate(10deg);
-//   -o-transform: rotate(10deg);
-//   transform: rotate(10deg);
-// }
-  var leavesAnimationHandler;
-  var intervalFrames = 60;
-  var leafIndex = 0;
-  var frameCount = 0;
-  var leavesAnimation = function()
-  {
-  	frameCount++;
-  	if (frameCount % intervalFrames == 0)
-  	{
-  		frameCount = 0;
+var leavesAnimationHandler;
+var intervalFrames = 60;
+var leafIndex = 0;
+var frameCount = 0;
+var LeavesAnimation = function()
+{
+	frameCount++;
+	if (frameCount % intervalFrames == 0)
+	{
+ 		frameCount = 0;
   		intervalFrames = Math.floor((Math.random()*120)+60); // random between 1s to 3s
   		leafIndex = Math.floor((Math.random()*15)); // random which leaf
   		var leaf = $("#leaves-highlight path")[leafIndex];
@@ -342,7 +337,18 @@
   		HighLight(leaf);
   		setTimeout(function(){UnHighLight(leaf)}, 2000); //set back to original color 2s later
   	};
-  	window.requestAnimationFrame(leavesAnimation);
-  }
+  	window.requestAnimationFrame(LeavesAnimation);
+}
+var enableLeafHeghLightAnimation = false;
+var EnableLeafHighLightAnimation = function ()
+{
+  enableLeafHeghLightAnimation = true;
+};
 
+(function() {
+  'use strict';
+  EnableSvgStroke();
+  EnablePopup();
+  EnableStorySlide();
+  EnableLeafHighLightAnimation();
 })();
