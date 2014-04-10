@@ -1071,6 +1071,9 @@ nav .rsvp a i {
     -o-transform: rotate(6deg);
     transform: rotate(6deg);
   }
+  .flexslider .popup {
+    display: block!important;
+  }
   #story-of-two .card {
     margin: 5em auto;
   }
