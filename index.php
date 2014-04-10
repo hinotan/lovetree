@@ -109,8 +109,8 @@
 <?php include_once('_popup.php') ?>
 
 
-<h2 class="headline mobile">Our big days</h2>
-<a href="https://www.facebook.com/events/1474195079476564/" class="mobile rsvp-button">
+<h2 class="headline mobile">Our big day</h2>
+<a href="https://www.facebook.com/events/1474195079476564/" class="mobile rsvp-button" target="_blank">
   RSVP on Facebook ;)
 </a>
 
@@ -137,7 +137,7 @@
       </a>
     </li>
     <li class="rsvp">
-      <a href="https://www.facebook.com/events/1474195079476564/">
+      <a href="https://www.facebook.com/events/1474195079476564/" target="_blank">
         <i></i>
         <span class="">RSVP</span>
       </a>

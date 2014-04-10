@@ -567,13 +567,6 @@ i {
 .hide-text {
   text-indent: -9999px;
 }
-a[target]:after {
-  content: url("../images/target.gif");
-}
-.no-target-icon:after,
-.no-target-icon a:after {
-  content: '';
-}
 .no-list-style,
 .no-list-style ul,
 .no-list-style ol {
@@ -636,13 +629,6 @@ Applied to main styles and admin wysiwyg editor.
 }
 .hide-text {
   text-indent: -9999px;
-}
-a[target]:after {
-  content: url("../images/target.gif");
-}
-.no-target-icon:after,
-.no-target-icon a:after {
-  content: '';
 }
 .no-list-style,
 .no-list-style ul,
@@ -950,8 +936,22 @@ nav .rsvp a i {
   .rsvp-button {
     display: block;
     width: 60%;
-    margin: 0 auto;
-    background: #b1c77a url(../images/dot-bg.png);
+    margin: 2em auto;
+    background: #8da571 url(../images/dot-bg.png);
+    text-align: center;
+    color: #f4f1d4;
+    font-size: 1.125em;
+    padding: 15px 0;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .rsvp-button:hover {
+    background-color: #e7636d;
   }
   #the-tree {
     width: 100%;
@@ -1003,11 +1003,11 @@ nav .rsvp a i {
   #moments {
     z-index: 10;
     position: relative;
-    margin-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 0;
+    overflow-x: hidden;
   }
   #moments .flex-control-paging {
-    top: -40px;
+    top: 0px;
   }
   #moments .flex-control-paging li a {
     height: 8px;
@@ -1195,6 +1195,7 @@ nav .rsvp a i {
     z-index: 999;
     left: 0;
     top: 0;
+    cursor: pointer;
   }
   nav ul {
     height: 100%;
@@ -1299,9 +1300,6 @@ nav .rsvp a i {
     cursor: pointer;
   }
   #leaves-highlight path {
-    -webkit-transition: 2s;
-    -moz-transition: 2s;
-    transition: 2s;
     -webkit-transform-origin: 50% 50%;
     -moz-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
@@ -1315,14 +1313,14 @@ nav .rsvp a i {
   }
   #leaves-highlight path:hover {
     fill: #e7636d;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    transition: 0.3s;
     -webkit-transform: rotate(10deg);
     -moz-transform: rotate(10deg);
     -ms-transform: rotate(10deg);
     -o-transform: rotate(10deg);
     transform: rotate(10deg);
+  }
+  #leaves-highlight path.pink {
+    fill: #e7636d;
   }
   #heart {
     -webkit-transition: 0.2s;

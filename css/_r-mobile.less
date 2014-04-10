@@ -34,8 +34,20 @@ hgroup {
 .rsvp-button {
   display: block;
   width: 60%;
-  margin: 0 auto;
-  background: @green url(../images/dot-bg.png);
+  margin: 2em auto;
+  background: @darkGreen url(../images/dot-bg.png);
+  text-align: center;
+  color: @paper;
+  font-size: 1.125em;
+  padding: 15px 0;
+  .border-radius(10px);
+  border-bottom: 3px solid rgba(0,0,0,0.3);
+  text-shadow: 0 -1px rgba(0,0,0,0.3);
+  .transition;
+
+  &:hover {
+    background-color: @pink;
+  }
 }
 
 //////////////////////////////////// SVG ////////////////////////////////////
@@ -108,11 +120,11 @@ nav {
 #moments {
   z-index: 10;
   position: relative;
-  margin-top: 60px;
-  padding-bottom: 60px;
+  padding: 60px 0;
+  overflow-x: hidden;
 
   .flex-control-paging {
-    top: -40px;
+    top: 0px;
 
     li a {
       .square(8px);

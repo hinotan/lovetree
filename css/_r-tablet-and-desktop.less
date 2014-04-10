@@ -29,6 +29,7 @@ nav {
   z-index: 999;
   left: 0;
   top: 0;
+  cursor: pointer;
 
   ul {
     height: 100%;
@@ -136,8 +137,13 @@ nav {
       .transition(.3s);
       .transform(rotate(10deg));
     }
+
+    &.pink {
+      fill: @pink;
+    }
   }
 }
+
 
 #heart {
   .transition(0.2s);

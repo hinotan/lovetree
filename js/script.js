@@ -26,7 +26,7 @@ var queries = [
     },
     unmatch: function() {
       // We're leaving mobile.
-        $('#moments').flexslider('stop').removeClass('flexslider');
+        $('#moments').removeClass('flexslider').flexslider('stop');
     }
   },
   {
@@ -98,7 +98,7 @@ function EnableSvgStroke()
       window.oRequestAnimationFrame      || 
       window.msRequestAnimationFrame     || 
       function(/* function */ callback){
-        window.setTimeout(callback, 1000 / 60);
+        window.setTimeout(callback, 1000 / 30);
       }
     );
   }();
@@ -120,7 +120,7 @@ function EnableSvgStroke()
     this.el = el;
     this.image = this.el.previousElementSibling;
     this.current_frame = 0;
-    this.total_frames = 50;
+    this.total_frames = 30;
     this.path = new Array();
     this.length = new Array();
     this.handle = 0;
@@ -129,7 +129,7 @@ function EnableSvgStroke()
 
   SVGEl.prototype.init = function() {
     var self = this;
-    [].slice.call( this.el.querySelectorAll( 'path' ) ).forEach( function( path, i ) {
+    [].slice.call( this.el.querySelectorAll( '#lines path' ) ).forEach( function( path, i ) {
       self.path[i] = path;
       var l = self.path[i].getTotalLength();
       self.length[i] = l;
@@ -151,6 +151,7 @@ function EnableSvgStroke()
       window.cancelAnimFrame(this.handle);
 
       $('#the-tree').removeClass('show-lines').addClass('show-color');
+      $('#the-tree #lines').remove();
 
       // add a animation effect indicating clickable leaves
       if (window.enableLeafHighLightAnimation == true)
