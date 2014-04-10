@@ -24,6 +24,7 @@ var queries = [
           $('body').addClass('show-story');
         });
         $('#close-story').click(function(){
+          console.log('a');
           $('.active-screen').fadeOut(1000);
           $('#moments').fadeIn(1000).addClass('active-screen');
           $('body').addClass('show-moments');
