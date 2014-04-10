@@ -50,9 +50,14 @@ nav {
     .transition;
     .border-radius(0);
   }
-  li:hover a {
+  &:hover a {
     .border-radius(0 5px 5px 0);
-    margin-left: 0;
+    margin-left: 0 !important;
+    //width: 50px;
+  }
+  li.history a {
+    .border-radius(0 5px 5px 0);
+    margin-left: -20px;
     //width: 50px;
   }
 
