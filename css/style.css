@@ -947,6 +947,12 @@ nav .rsvp a i {
     font-size: 2em;
     margin-top: 3em;
   }
+  .rsvp-button {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    background: #b1c77a url(../images/dot-bg.png);
+  }
   #the-tree {
     width: 100%;
     margin-top: -40px;
