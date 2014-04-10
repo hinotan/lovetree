@@ -300,7 +300,7 @@ nav {
     p {
       margin-right: 20px;
     }
-    p:nth-child(2) {
+    p.narrow {
       margin-right: 70px;
     }
   }
@@ -309,19 +309,60 @@ nav {
     width: 320px;
     height: 230px;
     padding: 0 20px 0px;
-    background-position: top right;
+    .bg {
+      right: 0;
+      left: auto;
+    }
 
     h3 {
       width: 120px;
+
+    }
+  }
+
+  .messages {
+    width: 400px;
+    height: 300px;
+
+    .bg {
+      top: 10px;
+      left: 10px;
+    }
+
+    h3 {
+      margin-top: 210px;
+    }
+    h3, p {
+      margin-left: 200px;
     }
   }
 
   .commute {
     width: 240px;
     height: 320px;
-    background-position: 50% 15px;
     padding: 100px 20px 0px;
     text-align: center;
+    .bg {
+      left: 50%;
+      top: 10px;
+      margin-left: -57px;
+    }
+  }
+
+
+  #close-story {
+    font-size: 72px;
+    color: @paper;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -30px;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      color: @pink;
+    }
   }
 }
 

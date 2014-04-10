@@ -23,6 +23,11 @@ var queries = [
           $('#story-of-two').fadeIn(1000).addClass('active-screen');
           $('body').addClass('show-story');
         });
+        $('#close-story').click(function(){
+          $('.active-screen').fadeOut(1000);
+          $('#moments').fadeIn(1000).addClass('active-screen');
+          $('body').addClass('show-moments');
+        });
     },
     unmatch: function() {
       // We're leaving mobile.
@@ -46,7 +51,6 @@ var queries = [
       console.log('a callback which spans multiple breakpoints, tablet and desktop!');
 
       // Now do things proper for big screens.
-        'use strict';
         EnableSvgStroke();
         EnablePopup();
         EnableStorySlide();
@@ -75,6 +79,8 @@ var queries = [
     match: function() {
       console.log('desktop callback woohoo! Load some heavy desktop JS badddness.');
       // your desktop specific logic can go here.
+      //$('#the-tree').addClass('show-lines');
+      //EnableSvgStroke();
     }
   }
 ];
@@ -151,7 +157,7 @@ function EnableSvgStroke()
       window.cancelAnimFrame(this.handle);
 
       $('#the-tree').removeClass('show-lines').addClass('show-color');
-      $('#the-tree #lines').remove();
+      //$('#the-tree #lines').remove();
 
       // add a animation effect indicating clickable leaves
       if (window.enableLeafHighLightAnimation == true)

@@ -17,6 +17,7 @@
 
 <!-- ::: CSS :::::::::: -->
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="vendor/css/onMediaQuery.css" type="text/css" />
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <!--[if lt IE 9]><link rel="stylesheet" href="css/iefix.css" type="text/css" /><![endif]-->
 
@@ -76,29 +77,44 @@
 
 <h2 class="headline mobile">Story of the two</h2>
 <div id="story-of-two" class="">
+  <a id="close-story" class="desktop">&times;</a>
   <ul class="slides">
     <li class="card text first-met current">
+      <div class="bg"></div>
       <h3>First met, 2006, Shanghai</h3>
       <p>It all started on the internet. Ellen and Shin knew each other in a chatroom of a game forum, and soon met offline. The chatroom group turned out to be way more close-knit than others. People hung out all the time and became friends for life.</p>
     </li>
 
     <li class="card text move-apart next">
-        <h3>The world’s largest metropolis v.s<br/>the world’s coolest little capital</h3>
-        <p>Then in 2007, Shin moved to Japan, while Ellen moved to New Zealand in 2009. Life continued and they kept friendship alive over the internet.</p>
-        <p>Shin is a programmer and Ellen is a designer. But one day Ellen decided to learn how to code and become a web developer. And she was just lucky enough to find her best tutor.</p>
+      <div class="bg"></div>
+      <h3>The world’s largest metropolis v.s<br/>the world’s coolest little capital</h3>
+      <p class="narrow">Then in 2007, Shin moved to Japan, while Ellen moved to New Zealand in 2009. Life continued and they kept friendship alive over the internet.</p>
+      <p>Shin is a programmer and Ellen is a designer. But one day Ellen decided to learn how to code and become a web developer. And she was just lucky enough to find her best tutor.</p>
     </li>
 
     <li class="card text dating hidden">
-        <h3>Officially boyfriend and girlfriend, <br/>2012</h3>
-        <p>Long distance sounded like a curse but once again the internet came to rescue. (What else can we celebrate more in this era!)</p>
+      <div class="bg"></div>
+      <h3>Officially boyfriend and girlfriend, <br/>2012</h3>
+      <p>Long distance sounded like a curse but once again the internet came to rescue. (What else can we celebrate more in this era!)</p>
+    </li>
+
+    <li class="card text messages hidden">
+      <div class="bg">
+        <div id="msg-qq">343536</div>
+        <div id="msg-gchat">83813</div>
+        <div id="msg-imsg">53054</div>
+        <div id="msg-mail">494</div>
+      </div>
+      <h3>Love is in the air</h3>
+      <p>...as electric waves.</p>
     </li>
 
     <li class="card text commute hidden">
-        <h3>Commute for a date</h3>
-        <p>6 trips.<br/>134597.45km total.<br/>That’s 3 ⅓ rounds around the Equator!</p>
-        <p>And still one trip due <br/>early 2015...</p>
+      <div class="bg"></div>
+      <h3>Commute for a date</h3>
+      <p>6 trips.<br/>134597.45km total.<br/>That’s 3 ⅓ rounds around the Equator!</p>
+      <p>And still one trip due <br/>early 2015...</p>
     </li>
-
 
   </ul>
 </div>

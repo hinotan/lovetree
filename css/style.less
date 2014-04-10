@@ -1,9 +1,10 @@
+/*! ( 'v')'v') Design & Development by Ellen Zheng & Shin Wong */
+
 @import "_normalize.less";
 @import "_light-bootstrap.less";
 @import "_mixin.less";
 @import "_typography.less";
 
-@import "../vendor/css/onMediaQuery.css";
 
 
 //////////////////////////////////// Basic ////////////////////////////////////
@@ -155,21 +156,80 @@ nav {
   .no-list-style;
   z-index: 10;
 
-  .first-met {
-    background: @paper url(../images/china.png) no-repeat;
+  .bg {
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
-  .move-apart {
-    background: @paper url(../images/jp-nz.png) no-repeat;
+  .first-met .bg {
+    .at2x("../images/china.png", 354px, 222px);
+    .size(354px, 222px);
   }
 
-  .dating {
-    background: @paper url(../images/dating.png) no-repeat;
+  .move-apart .bg {
+    //background: @paper url(../images/jp-nz.png) no-repeat;
+    .at2x("../images/jp-nz.png", 288px, 316px);
+    .size(288px, 316px);
   }
 
-  .commute {
-    background: @paper url(../images/earth.png) no-repeat;
+  .dating .bg {
+    //background: @paper url(../images/dating.png) no-repeat;
+    .at2x("../images/dating.png", 152px, 96px);
+    .size(152px, 96px);
   }
+
+  .messages .bg {
+    .at2x("../images/messages.png", 227px, 257px);
+    .size(227px, 257px);
+
+    div {
+      background: @pink;
+      color: #fff;
+      font-size: 11px;
+      font-family: sans-serif;
+      .border-radius(30px);
+      position: absolute;
+      -webkit-font-smoothing: antialiased;
+      text-shadow: none;
+      line-height: 1;
+      padding: 3px 5px;
+    }
+
+    #msg-qq {
+      left: 96px;
+      top: 183px;
+    }
+    #msg-gchat {
+      left: 30px;
+      top: 130px;
+    }
+    #msg-imsg {
+      top: 25px;
+      left: 60px;
+    }
+    #msg-mail {
+      left: 155px;
+      top: -9px;
+    }
+  }
+
+
+  .commute .bg {
+    //background: @paper url(../images/earth.png) no-repeat;
+    .at2x("../images/earth.png", 112px, 83px);
+    .size(112px, 83px);
+  }
+
+  .card {
+    background: @paper;
+  }
+
+  h3, p {
+    position: relative;
+  }
+
 }
 
 .show-story {
@@ -324,7 +384,7 @@ nav {
 ------------------------ */
 
 
-@import "../vendor/css/flexslider.css";
+@import "../vendor/css/flexslider.less";
 
 /* Control Nav */
 .flex-control-paging li a {
